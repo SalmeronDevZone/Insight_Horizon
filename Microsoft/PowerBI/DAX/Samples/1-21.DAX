@@ -1,0 +1,320 @@
+180 Casos DAX. Corregido y adunto a fuente original.
+
+ -- TABLAS CALCULADAS --
+
+01-Calendario = 
+ADDCOLUMNS(
+    CALENDAR(
+        
+        MIN(Sales[Date]),
+        MAX(Sales[Date])),
+
+        "Año", YEAR([Date]),
+        "Mes", MONTH([Date]),
+        "Trimestre", "Trim - " & QUARTER([Date]),
+        "Día", DAY([Date]),
+        "Dia de la semana", WEEKDAY([Date]),
+        "Nombre del mes", FORMAT([Date],"MMMM"),
+        "Trimestre-letras", 
+            SWITCH(
+                QUARTER([Date]), 
+                1, "Primero",
+                2, "Segundo",
+                3, "Tercero",
+                4, "Cuarto",
+                 "Fallo en trimestre")
+)
+
+00 xx dimFechas = 
+
+--Variables para almacenar los años mínimo y máximo---------------
+VAR _ejercicioMin =     YEAR( MIN( factPedidos[fechaPedido] ) )
+VAR _ejercicioMax =     YEAR( MAX( factPedidos[fechaPedido] ) )
+
+--Variables para almacenar las fechas mínima y máxima-------------
+VAR _fechaMin =         DATE( _ejercicioMin, 1, 1 )
+VAR _fechaMax =         DATE( _ejercicioMax, 12, 31 )
+
+--Variable para determinar el primer mes fiscal-------------------
+VAR _primerMesFisc =    7  --Adaptar según necesidades
+
+RETURN
+
+ADDCOLUMNS (
+    --Generación de tabla para columna de fecha-------------------
+    CALENDAR ( _fechaMin, _fechaMax ),
+
+    --Generación de columnas--------------------------------------
+    "Año",              YEAR( [Date] ),
+    "Trimestre",        "Trim-" & QUARTER( [Date] ),
+    "Nombre mes",       FORMAT( [Date], "mmm" ),
+    "N.º mes",          MONTH( [Date] ),
+    "Mes-año",          FORMAT( [Date], "mmm-yy" ),
+    "N.º año-mes",      VALUE( FORMAT( [Date], "yyyymm" ) ),
+    "Nombre día semana",FORMAT( [Date], "DDDD" ),
+    "N.º día semana",   WEEKDAY( [Date], 2 ),
+                        --Adaptar según necesidades
+
+    --Otras columnas complementarias------------------------------
+    "Es día laborable", IF(
+                            WEEKDAY( [Date], 2 ) <= 5,
+                            --Adaptar según necesidades
+                            "Día laborable",
+                            "Fin de semana"
+                        ),
+    "Semana del año",   WEEKNUM( [Date], 21 ),
+                        --Adaptar según necesidades
+    "Semestre",         IF(
+                            MONTH( [Date] ) <= 6,
+                            "Semestre 1",
+                            "Semestre 2"
+                        ),
+
+    --OPCIONAL: clave subrogada para relacionar-------------------
+    "IDS_fecha",        YEAR( [Date] ) * 10000 + 
+                        MONTH( [Date] ) * 100 + 
+                        DAY( [Date] ),
+
+    --Columnas para gestión de años fiscales----------------------
+    "Año fiscal",       IF(
+                            MONTH( [Date] ) >= _primerMesFisc,
+                            "AF " & YEAR( [Date] ) + 1,
+                            "AF " & YEAR( [Date] )
+                        ),
+    "Semestre fiscal",  VAR _mesFiscal = MOD(
+                                            MONTH( [Date] ) -
+                                            _primerMesFisc + 12,
+                                            12
+                                        )
+                                        + 1
+                        RETURN
+                        "Semestre " &
+                        IF( _mesFiscal <= 6, 1, 2),
+    "Trim. fiscal",     VAR _mesFiscal =    MOD(
+                                                MONTH( [Date] ) -
+                                                _primerMesFisc + 12,
+                                                12
+                                            )
+                                            + 1
+                        RETURN
+                        "Trim-" &
+                        SWITCH(
+                            TRUE(),
+                            _mesFiscal >= 1 && _mesFiscal <= 3, 1,
+                            _mesFiscal >= 4 && _mesFiscal <= 6, 2,
+                            _mesFiscal >= 7 && _mesFiscal <= 9, 3,
+                            4
+                        )
+)
+
+
+02-TablaQuejasClientes = 
+DATATABLE(
+    "Country", STRING,
+    "Complaints", INTEGER,
+    "Year", INTEGER,
+    "Complaint Category", STRING,
+    "Satisfaction Level", INTEGER,
+    {
+        {"Canada", 32, 2012, "Product Defect", 3},
+        {"Spain", 15, 2013, "Late Delivery", 4},
+        {"Mexico", 28, 2014, "Customer Service", 2},
+        {"Argentina", 18, 2015, "Billing Issue", 3},
+        {"Colombia", 22, 2016, "Product Defect", 4},
+        {"Chile", 30, 2017, "Late Delivery", 2},
+        {"Peru", 24, 2018, "Customer Service", 3},
+        {"Brazil", 40, 2019, "Billing Issue", 1},
+        {"Uruguay", 12, 2020, "Product Defect", 4},
+        {"Paraguay", 10, 2021, "Late Delivery", 5},
+        {"Bolivia", 19, 2022, "Customer Service", 2},
+        {"Ecuador", 27, 2023, "Billing Issue", 3},
+        {"Venezuela", 33, 2024, "Product Defect", 2},
+        {"Honduras", 14, 2025, "Late Delivery", 4},
+        {"El Salvador", 25, 2026, "Customer Service", 3},
+        {"Nicaragua", 20, 2027, "Billing Issue", 2},
+        {"Costa Rica", 17, 2028, "Product Defect", 4},
+        {"Panama", 22, 2029, "Late Delivery", 3},
+        {"Guatemala", 16, 2030, "Customer Service", 4},
+        {"Dominican Republic", 35, 2031, "Billing Issue", 2}
+    }
+)
+ -- Si solo se introduce el año debe ser como integer, si se usa date time puede generarse error.
+
+
+03-EmpleosEspañol =  -- Crear una tabla con valores unicos.
+ADDCOLUMNS(
+    DISTINCT(DimCustomer[SpanishOccupation]),
+    "ID", RANKX(DISTINCT(DimCustomer[SpanishOccupation]), DimCustomer[SpanishOccupation], , ASC, DENSE)
+)  
+-- La formula original solo contempla el distinct, el resultado de la tabla es unicamente la ocupacion española.
+
+
+04-Tabla de ResellerSales UNICOS = 
+DISTINCT(FactResellerSales)
+-- No tiene sentido pues no hay ninguna fila que se repita.
+
+
+05-Total y subtotal por categoria = 
+SUMMARIZE( Sales,
+    ROLLUP(Sales[Country]),
+    "Sum", SUM(Sales[Sales]),
+    "Avg", AVERAGE(Sales[Sales])
+    )
+
+
+06-Tabla ventas numerosas paseo = 
+SUMMARIZE(
+    CALCULATETABLE(Sales,
+        FILTER(Sales, Sales[Product] = "paseo")),
+    ROLLUP(Sales[Country]),
+    "Sum", SUM(Sales[Sales]),
+    "Avg", AVERAGE(Sales[Sales])
+)
+
+
+07-DosSummarize = 
+SUMMARIZE(
+    SUMMARIZE(
+        Sales,
+        Sales[Country],
+        '01-Calendario'[Año],
+        Sales[Sales]),
+    ROLLUP('01-Calendario'[Año]),
+    "SUM", SUM(Sales[Sales]),
+    "AVG", AVERAGE(Sales[Sales])
+)
+
+08-TablaCalculada = 
+ADDCOLUMNS(
+    SUMMARIZE(
+        sales,
+        Sales[Country],
+        '01-Calendario'[Año]),
+    "Sum", CALCULATE(SUM(Sales[Sales])),
+    "Avg", CALCULATE(AVERAGE(Sales[Sales])
+    )
+)
+
+
+09-Ventasaño2014 = 
+CALCULATETABLE(
+    Sales,
+    '01-Calendario'[Año] = 2014)
+
+
+10-Ventas2014-Francia = 
+CALCULATETABLE(
+    sales,
+    '01-Calendario'[Año]=2014,
+    Sales[Country]="france")    -- NOT KEYSENSITIVE
+
+
+11-TablaCalculada =     -- Seleccionas la columna específica.
+SELECTCOLUMNS(
+    sales,
+    Sales[Country],
+    Sales[Product],
+    Sales[Profit]
+)
+
+12-TablaCalculada = 
+SELECTCOLUMNS(
+    Sales,
+    "Pais", Sales[Country],
+    "Ventas", Sales[Sales],
+    "Año", 
+    LOOKUPVALUE
+        ('01-Calendario'[Año], '01-Calendario'[Date], Sales[Date])
+)
+
+
+13-TablaCalculada = 
+SUMMARIZECOLUMNS(
+    Sales[Country],
+    "Ventas totales", SUM(Sales[Sales]),
+    "Media Ventas", AVERAGE(Sales[Sales]),
+    "Max ventas", MAX(Sales[Sales]),        -- En el libro pone de manera ERRONEA MAXX(sales,sum(sales[columna Sales]))
+    "Min ventas", MIN(Sales[Sales]),
+    "Conteo Ventas", COUNTROWS(Sales)
+)
+
+
+14-TablaCalculada = 
+SUMMARIZECOLUMNS(
+    Sales[Country],  
+    FILTER(
+        Sales, 
+        Sales[Segment] = "Government"  
+    ),  
+    "Ventas totales", SUM(Sales[Sales]),  
+    "Media Ventas", AVERAGE(Sales[Sales]), 
+    "Max ventas", MAX(Sales[Sales]), 
+    "Min ventas", MIN(Sales[Sales]),  
+    "Conteo Ventas", COUNTROWS(Sales) 
+)
+
+
+15-TablaCalculada = -- 2 filtros esta vez.
+SUMMARIZECOLUMNS(
+    Sales[Country],  
+    FILTER(
+        Sales, 
+        Sales[Segment] = "Government"),
+    FILTER(
+        '01-Calendario',
+        '01-Calendario'[Año]=2014),  
+    "Ventas totales", SUM(Sales[Sales]),  
+    "Media Ventas", AVERAGE(Sales[Sales]), 
+    "Max ventas", MAX(Sales[Sales]), 
+    "Min ventas", MIN(Sales[Sales]),
+    "Conteo Ventas", COUNTROWS(Sales)
+)
+
+
+
+16-TablaCalculada = 
+SELECTCOLUMNS(
+    Salesman,
+    "Name", Salesman[Name],  
+    "Gender", Salesman[Gender], 
+    "Media de Ventas", AVERAGEX(
+        RELATEDTABLE(Sales),  
+        Sales[SalesAmount]  
+    )
+)
+
+
+17-TablaAnteriorConFiltro = 
+SELECTCOLUMNS(
+    FILTER(
+        Salesman,
+        Salesman[Gender]="M"),
+    "Name", Salesman[Name],  
+    "Gender", Salesman[Gender], 
+    "Media de Ventas", AVERAGEX(
+        RELATEDTABLE(Sales),  
+        Sales[SalesAmount]  
+    )
+)
+
+
+18-TablaCalculada = 
+FILTER(
+    ADDCOLUMNS(
+        SUMMARIZE(
+            Sales,
+            'Sales'[Country],
+            '01-Calendario'[Año]),
+            "Suma", SUM(Sales[Sales]),
+            "Media", AVERAGE(Sales[Sales])
+        ),
+        [Suma] > 500000 && Sales[Country] ="germany"        -- La funcion AND() puede sustituir &&. OR() Se puede poner como ||
+    )
+
+
+20-TablaValues = 
+VALUES(Sales)
+
+
+21-TablaValuesCountry =
+VALUES(Sales[Country])
