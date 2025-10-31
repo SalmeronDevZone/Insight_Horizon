@@ -1,0 +1,244 @@
+-- Formulas Basicas DAX           BASE DE DATOS -> NORTHWIND
+
+SUM() = Suma los valores de una columna.
+Total Sales = SUM(Sales[SalesAmount])
+CostosTransporte = 
+    SUM(Orders[Freight])
+
+AVERAGE() = Promedio de los valores de una columna.
+Average Sales = AVERAGE(Sales[SalesAmount])
+MediaCostoTransporte = 
+    AVERAGE(Orders[Freight])
+
+MAX() = Devuelve el digito maximo de una tabla.
+Max Price = MAX(Sales[Price])
+PrecioMaximo = 
+    MAX(Products[UnitPrice])    -- La funcion MIN() es igual.
+
+COUNT() = Cuenta los elementos de una columna. No cuenta no nulos. ( BLANK )
+Total Orders = COUNT(Sales[OrderID])
+TotalOrdenes = 
+    COUNT(Orders[OrderID])
+
+DISTINCTCOUNT() = Cuenta el numero de valores unicos en una columna.
+Unique Customers = DISTINCTCOUNT(Sales[CustomerID])
+NumeroClientesDistintos = 
+    DISTINCTCOUNT(Orders[CustomerID])
+
+CALCULATE() = Cambia el contexto de evaluaciOn de una medida al aplicar uno o mAs filtros.
+Result = CALCULATE(Expression, Filter1, Filter2, ...)
+TotalCosteEnvio2023 = 
+    CALCULATE(SUM(Orders[Freight]), YEAR(Orders[OrderDate]) = 2023)   -- YEAR() extrae de la fecha el anio.
+
+FILTER() = Devuelve una TABLA filtrada segun contexto. 
+Result = FILTER(Table, Condition)
+PrecioTransporteMasDe100 = 
+    FILTER(Orders, Orders[Freight] > 100)
+
+RELATED() = Devuelve un valor de una tabla relacionada.
+ProductName = RELATED(Productos[ProductName])
+NombreCliente = 
+    RELATED(Customers[ContactName])
+
+IF() = Devuelve un valor si una condicion es verdadera y otro valor si es falsa.
+SalesClasf = IF(Sales[Amount] > 1000, "High", "Low")
+BaratoOCaroTransporte = 
+    IF(Orders[Freight] > 100, "Es Caro" , " Es barato" )
+
+ALL() = Ignora cualquier filtro aplicado a una columna o tabla.
+TOTALSALES = CALCULATE(SUM(Products[Sales]), ALL(Products))
+TotalPedidos =
+     CALCULATE(SUM('Order Details'[Quantity]), ALL('Order Details'))
+
+
+-- FUNCIONES DE ITERACION
+
+SUMX() = Suma los valores de una expresión evaluada fila por fila en una tabla.
+INGRESOS_TOTALES = SUMX(Sales, Sales[Price] * Sales[Quantity])
+TOTAL_INGRESOS = 
+    SUMX('Order Details', 'Order Details'[Quantity] * 'Order Details'[UnitPrice])
+
+AVERAGEX = Calcula el promedio de una expresión evaluada fila por fila en una tabla.
+AVERAGE_DISCOUNT = AVERAGEX(Products, Products[Price] * [Discount])
+MediaConDescuento = 
+    AVERAGEX('Order Details',('Order Details'[UnitPrice]*0.9)*'Order Details'[UnitPrice])
+
+MAXX = Devuelve el valor máximo de una expresión evaluada fila por fila en una tabla.
+MAX_PRFT = MAXX(Sales, Sales[Profit])
+Producto mas caro pedido = 
+    MAXX('Order Details','Order Details'[Quantity] * 'Order Details'[UnitPrice])  
+    (MINX ES IGUAL).
+
+COUNTX = Cuenta las filas donde una expresión no es BLANK
+Contando Producto X = COUNTX(Products, IF(Products[Category] = "X", 1, BLANK()))
+Cantidad Descuentos = COUNTX('Order Details', ( 
+    IF('Order Details'[Discount] > 0, 1, BLANK())
+))
+
+
+-- FUNCIONES DAX ADICIONALES.
+
+
+SWITCH() = uSO DE VARIOS if().
+VentasPorSegmento = SWITCH(
+    TRUE(),
+    Sales[SalesAmount] > 1000, "Alta",
+    Sales[SalesAmount] > 500, "Media",
+    "Baja"
+)
+
+ROUND() = Redondea números.
+Rounded Sales = ROUND(Sales[SalesAmount], 2)
+
+DIVIDE() = 
+RatioVentas = DIVIDE(SUM(Sales[SalesAmount]), SUM(Sales[Quantity]))
+
+CONCATENATE() = Une valores de texto.
+NombreCompleto = CONCATENATE(Orders[FirstName], " " & Orders[LastName])
+
+LEFT(), RIGHT(), MID() = Para manipular partes de cadenas de texto.
+CodigoPais = LEFT(Customers[Phone], 3)
+
+SEARCH() = Busca una subcadena dentro de otra y devuelve la posicion.
+PosicionA = SEARCH("A", Customers[ContactName], 1, -1)
+
+TODAY() = Devuelve fecha actual.
+FechaHoy = TODAY()
+
+DATE = Permite crear una fecha.
+FechaInicio = DATE(2023, 1, 1)
+
+DATEDIFF = Calcula la diferencia entre dos fechas en dias, meses o años.
+DiasDesdePedido = DATEDIFF(Orders[OrderDate], TODAY(), DAY)
+
+ADDCOLUMNS = Crea una columna calculada.
+TablaConMargen = ADDCOLUMNS(
+    Products,
+    "Margen", Products[Price] - Products[Cost]
+)
+
+SUMMARIZE = Devuelve una tabla resumida basada en columnas calculadas.
+VentasPorCategoria = SUMMARIZE(
+    Products,
+    Products[Category],
+    "TotalVentas", SUM(Products[SalesAmount])
+)
+
+VALUES = Devuelve una tabla con valores unicos.
+ProductosUnicos = VALUES(Products[ProductName])
+
+RANKX = Asigna un rango basado en columna o expresion.
+RankingProductos = RANKX(Products, Products[SalesAmount], , DESC)
+
+TOPN = Devuelve las primeras N filas de una tabla.
+Top3Productos = TOPN(3, Products, Products[SalesAmount], DESC)
+
+
+-- FUNCIONES DE TIEMPO
+
+Date = 
+ADDCOLUMNS(
+    CALENDAR(
+        MIN(Orders[OrderDate]),
+        MAX(Orders[OrderDate])
+    ),
+    "Year", YEAR([Date]),
+    "Month", FORMAT([Date], "MMMM"),
+    "MonthNumber", MONTH([Date]),
+    "Quarter", "Q" & QUARTER([Date]),
+    "Weekday", FORMAT([Date], "dddd")
+)
+
+TOTALYTD() = Calcula el valor acumulado desde el inicio del año hasta el momento indicado.
+VentasAcumuladasYTD = 
+TOTALYTD(
+    SUM(Orders[Freight]),
+    'Date'[Date]
+)
+
+SAMEPERIODLASTYEAR() = Devuelve un conjunto de datos correspondiente al mismo período del año anterio
+Transporte año pasado = 
+CALCULATE(
+    SUM(Orders[Freight]),
+    SAMEPERIODLASTYEAR('Date'[Date])
+)
+
+Transporte por rango = 
+CALCULATE(
+    SUM(Orders[Freight]),
+    DATESBETWEEN(
+        'Date'[Date],
+        DATE(2023, 1, 1),
+        DATE(2023, 12, 31)
+    )
+)
+
+
+
+-- INTRODUCCION VARIABLES.
+
+    -> Las variables se declaran con la palabra reservada VAR, el valor final con RETURN.
+
+Ejemplo Variable = 
+
+    VAR CATEGORIA_SELECCIONADA = "SEAFOOD"
+
+    RETURN
+    SUMX(
+        'Order Details',
+        IF(
+            RELATED(Categories[CategoryName]) = CATEGORIA_SELECCIONADA,
+            'Order Details'[Quantity] * 'Order Details'[UnitPrice],
+            BLANK()
+        )
+    )
+
+
+-- ejemplos VARIOS
+
+EJ01 Media gato embarque año 97 = 
+CALCULATE(
+    AVERAGE(Orders[Freight]),
+    'Date'[Year] = 1997,
+    ALL('Date'),
+    ALL(Products),
+    ALL(Orders)
+)
+
+EJ02 Media gato embarque año 97 = 
+CALCULATE(
+    SUM(Orders[Freight]),
+    'Date'[Year] = 1997,
+    ALL('Date'),
+    ALL(Products),
+    ALL(Orders)
+)
+
+EJ03 Producto Maximo Vendido = 
+    CALCULATE(
+        MAX(Products[UnitPrice]), 
+        'Order Details'
+    )
+
+
+
+
+
+Sales non USA =
+    SUMX(
+        FILTER(
+            Sales,
+            RELATED(Geography[Country]) <> "United States"
+            ),
+        Sales[SalesAmount]
+    )
+
+
+Sales non USA =     -- MAS EFICIENTE
+    CALCULATE(
+        SUM(Sales[SalesAmount]),
+        FILTER(
+            Sales,
+            RELATED(Geography[Country]) <> "United States"
+        )
+)
