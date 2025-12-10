@@ -1,0 +1,64 @@
+﻿EVALUATE
+
+{
+/*--------------------------------------------------------------------
+Medida para calcular el N.º de clientes considerados nuevos.
+--------------------------------------------------------------------*/
+--Variables que almacenan las fechas que acotan los tres períodos-----
+VAR _fechUltFra = DATE(2020, 3, 3)
+--VAR _fechUltFra =   MAX( factPedidos[fechaPedido] )
+VAR _nMesesRecien = 2 //Personalizar N.º meses del período reciente
+VAR _nMesesInterm = 2 //Personalizar N.º meses del período intermed
+VAR _nMesesAntig = 	12 - _nMesesRecien - _nMesesInterm
+VAR _postRecient =  EOMONTH( _fechUltFra, -1 ) + 1
+VAR _iniReciente =  EDATE( _postRecient, - _nMesesRecien )
+VAR _finIntermed =  _iniReciente - 1
+VAR _iniIntermed =  EDATE ( _iniReciente, -_nMesesInterm )
+VAR _finAntiguo =   _iniIntermed - 1
+VAR _iniAntiguo = 	EDATE( _iniIntermed, -_nMesesAntig )
+VAR _antesAntiguo = _iniAntiguo - 1
+
+--Variable que almacena los clientes en el período reciente-----------
+VAR _cliRecientes = CALCULATETABLE(
+				        VALUES( factPedidos[ID_cliente] ),
+				        dimCalendario[fecha] > _finIntermed,
+				        dimCalendario[fecha] < _postRecient
+				    )
+
+--Variable que almacena los clientes en el período intermedio---------
+VAR _cliIntermed =  CALCULATETABLE(
+				        VALUES( factPedidos[ID_cliente] ),
+				        dimCalendario[fecha] < _iniReciente,
+				        dimCalendario[fecha] > _finAntiguo
+				    )
+
+--Variable que almacena los clientes en el período antiguo------------
+VAR _cliAntiguos =	CALCULATETABLE(
+				        VALUES( factPedidos[ID_cliente] ),
+                            dimCalendario[fecha] < _iniIntermed,
+				            dimCalendario[fecha] > _antesAntiguo
+				    )
+
+--Variable que almacena el número de clientes perdidos----------------
+VAR _perdidos =		COUNTROWS(
+                        EXCEPT(
+                            DISTINCT(
+                                UNION( _cliAntiguos, _cliIntermed )
+                            ),
+                            _cliRecientes
+                        )
+                    )
+
+--Variable que almacena el promedio de clientes activos---------------
+VAR _promedio =     DIVIDE(
+                        COUNTROWS(
+                            UNION( _cliAntiguos, _cliIntermed )
+                        ),
+                        2
+                    )
+
+--Variable que almacena el resultado del cálculo de la tasa Churn-----
+VAR _result =       DIVIDE( _perdidos, _promedio )
+
+RETURN              _result
+}

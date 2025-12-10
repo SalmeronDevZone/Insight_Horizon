@@ -1,0 +1,206 @@
+
+
+44-Conteo por categoria = 
+    CALCULATE(
+        COUNTROWS(Sales),
+        FILTER(
+            ALLNOBLANKROW(Sales),
+            Sales[Country] = "Germany"
+
+        )
+    )
+
+
+45-Conteo valores no blank = 
+    CALCULATE(
+        COUNT(Sales[Discount]),
+        NOT(ISBLANK(Sales[Discount]))
+    )
+
+
+46-Conteo valores blancos = 
+    COUNTBLANK(Sales[Discount])
+
+
+47-Contar num de veces cada valor repetido = 
+    COUNTROWS(
+        FILTER(
+            Sales,
+            Sales[Product] = EARLIER(Sales[Product])
+        )
+    )
+
+
+48-Numero de veces que se repite dentro de una categoria = 
+    IF(
+        Sales[Product] = "Tools",
+        COUNTROWS(
+            FILTER(
+                Sales,
+                Sales[Product] = EARLIER(Sales[Product])
+            )
+        ),
+        BLANK()
+    )
+
+
+49-Total ventas = 
+    SUM(Sales[Sales])
+// Afectada por el contexto de filtro.
+
+
+50-Total ventas sin filtros que afecten = 
+CALCULATE(
+    SUM(Sales[Sales]),
+    ALL(Sales)
+)
+
+
+51-TotalPorCategoria = 
+//Ventas por sextoy y pais
+var gSales = SUM(Sales{Sales})
+
+var gTaxes = SUM(Sales[Sales]*Sales[Tax])
+
+RETURN
+    SUMMARIZE(
+        Sales,
+        Sales[Country],
+        Sales[Tax],
+        Sales[Sector],
+        "Ventas Brutas", gSales,
+        "Impuestos Netos", gTaxes,
+        "Ventas Netas", gSales - gTaxes
+    )
+
+
+52-Total por Categorias(2) = 
+    CALCULATETABLE(
+        SUMMARIZE(
+            Sales,
+            CountryTAX[CountryTAX],
+            Sector[Sector],
+            "Ventas totales", SUM(Sales[Sales])
+                ), CountryTAX = "France"
+    )
+
+
+53-Total por categoría(3) =
+    SUMMARIZE(
+        CALCULATETABLE(
+            Sales,
+            FILTER(
+                Sector,
+                Sector[Sector] = "Midmarket"
+            ),
+            FILTER(
+                CountryTAX,
+                CountryTAX[Country] = "France"
+            )
+        ),
+        Category[Category],
+        "Ventas totales", SUM(Sales[Sales]),
+        "Promedio de Ventas", AVERAGEX(
+            Sales, SUM(Sales[Sales])
+        ),
+        "Maximo en ventas", MAXX (Sales, SUM(Sales[Sales])),
+        "Minimo en ventas", MINX (Sales, SUM(Sales[Sales])),
+        "Conteo de Ventas", COUNTROWS(Sales)
+    )
+
+
+
+55-Calculo subtotal por categoria(2) = 
+    SUMMARIZE(
+        Sales,
+        Sales[Salesman],
+        ROLLUPGROUP(Sector[Sector]),
+        "Sales", SUM(Sales[Sales])
+    )
+
+56-Agrupar resultado por N categorías =
+    GROUPBY(
+    Sales,
+    Sales[Country],  -- En el libro salen diferentes tablas. Produce  errores.
+    Sales[Salesman],  
+    "Total Sales",
+    SUMX(
+        CURRENTGROUP(),
+        SUM(Sales[Sales])
+    )
+)
+
+
+57-Comparar cadenas de texto misma tabla = 
+    EXACT(
+        Sales[Gross Sales],
+        Sales[Sales]
+    )
+
+58-Comparar dos cadenas distinta tabla = 
+    EXACT(
+        Country2[Country],
+        RELATED(
+            CountryTax[Country]
+        )
+    )
+
+
+59-Valores no coincidentes en tablas relacionadas = 
+
+    var VentaPaises = VALUES(
+        Sales[Country]
+    )
+
+    var TablaPaises = VALUES(
+        Country_2[Country]
+    )
+
+    RETURN EXCEPT(
+        TablaPaises,
+        VentaPaises
+    )
+
+
+
+60-Valores no coincidentes tablas NO relacionadas =
+
+    var VentaPaises = VALUES(Sales[Country])
+
+    var TablaPaises = VALUES(Country_2[Country])
+
+    RETURN CALCULATETABLE(
+        EXCEPT(
+            TablaPaises,
+            VentaPaises
+        ),
+        TREATAS(
+            Country_3,
+            'Country Tax'[Country]
+        )
+    )
+
+
+61-Valores coincidentes tablas NO relacionadas = 
+    INTERSECT(
+        VALUES(
+            Country_3[Country]
+        ),
+        VALUES(
+            Country_2[Country]
+        )
+    )
+
+
+62-Redondeo de número hacia arriba, dos decimales = 
+    ROUNDUP(Sales[Profit],2)
+
+
+63-Redondeo hacia abajo =
+    ROUNDDOWN(Sales[Profit],2)
+
+
+64-Redondeo = 
+    ROUND(Sales[Profit],2)
+
+

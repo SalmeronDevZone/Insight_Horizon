@@ -1,0 +1,17 @@
+﻿EVALUATE
+{
+VAR _salidas =      CALCULATE(SUM(factPedidos[ud]), factPedidos[ud] < 4)
+VAR _promAcum =     AVERAGEX(
+                        VALUES(dimCalendario[añoMes]),
+                        CALCULATE(
+                            VAR _diaMax = MAX( dimCalendario[fecha] )
+                            RETURN
+                            CALCULATE(
+                                SUM( factPedidos[ud] ),
+                                dimCalendario[fecha] <= _diaMax
+                            )
+                        )
+                    )
+VAR _result =       DIVIDE(_salidas, _promAcum)
+RETURN _result
+}

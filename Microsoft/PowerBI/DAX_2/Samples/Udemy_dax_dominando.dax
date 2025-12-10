@@ -1,0 +1,128 @@
+Unidades TOTALES de inventario = 
+    SUM(FactDetalles[Quantity])
+
+Minimo unidades tomadas inventario = 
+    MIN(FactDetalles[Quantity])
+
+Promedio cantidad = 
+    AVERAGE(FactDetalles[Quantity])
+
+Cantidad transacciones = 
+    COUNTROWS(FactTransacciones)
+
+Registros con descuento = 
+    COUNTA(FactDetalles[Discount])  -- Obvia valores en blanco.
+
+Registros sin descuento = 
+    COUNTBLANK(FactDetalles[Discount])
+
+Productos unicos = 
+    DISTINCTCOUNT(DimProducto[Product ID])
+
+Desviacion standard = 
+    STDEV.P(FactDetalles[Quantity]) -- Valores cerca o lejos del promedio!
+
+MEdiana unidades de inventario = 
+    MEDIAN(FactDetalles[Quantity]) -- 50% de los valores son menores o iguales a este valor.
+
+Percentil = 
+    PERCENTILE.EXC(FactDetalles[Quantity], 0.50) -- 50% de los valores son menores o iguales a este valor. Podriamos usar el 90%
+
+Rango unidades tomadas inventario = 
+     [Maximo unidades tomadas inventario] -
+     [Minimo unidades tomadas inventario]
+
+
+Promedo sin decimales = 
+    ROUND([Promedio cantidad],0)    -- Se puede usar la interfaz en la interfaz.
+
+DIV Promedio unidades tomadas de inventario = 
+
+    VAR numerador = [Unidades promedio tomadas de inventarios]
+
+    VAR denominador = COUNTROWS(FactDetalles)
+
+    VAR operacion = DIVIDE(
+    numerador,
+    denominador,
+    0
+    )
+
+    RETURN operacion
+
+C Producto entragado S/N = 
+    RELATED(FactTransacciones[Returned])    -- Trae una columna de la tabla relacionada.
+
+C nombre vendedor = 
+    RELATED( DimVendedor[Retail Sales People])
+
+C total facturado = 
+    ( FactDetalles[Sales] * FactDetalles[Quantity] ) *
+    ( 1 - FactDetalles[Discount])
+
+C descuento aplicado = 
+    FactDetalles[Sales] * FactDetalles[Quantity] * FactDetalles[Discount]
+
+C Ganancia = 
+    ( FactDetalles[Profit] * FactDetalles[Quantity] ) *
+    ( 1 - FactDetalles[Discount] )
+
+
+TotalFacturado = 
+    SUMX(
+        FactDetalles,
+        FactDetalles[Sales] * FactDetalles[Quantity] 
+    )
+
+TotalDescuentoFacturado = 
+    SUMX(
+        FactDetalles,
+        FactDetalles[Sales] * FactDetalles[Quantity] * FactDetalles[Discount]
+    )
+
+PRomedioDescuentoFacturado = 
+    AVERAGEX(
+        FactDetalles,
+        FactDetalles[Sales] * FactDetalles[Quantity] * FactDetalles[Discount]
+    )
+
+MaximoFacturado = 
+    MAXX(
+        FactDetalles,
+        FactDetalles[Sales] * FactDetalles[Quantity]
+    )
+
+ListaDescuento =    
+    IF( FactDetalles¨[Discount] = 0.65, "Lista mayorista", "Lista minorista")
+
+
+Tipo vendedor = 
+    IF(
+        Related( DimVendedor [IdVendedor]) = ,
+        "Vendedor Local",
+        "Vendedor Extranjero"
+    )       -- Es una columna de otra tabla relacionada.
+
+
+Tipo Mercado = 
+    IF(
+        RELATED(
+            DimProducto[Subcategory]
+        ) IN {"Paper", "Art"},
+        "Nacional",
+        "Internacional"
+    )
+
+
+
+Tipo de cliente Switch = 
+    SWITCH(
+        TRUE(),
+        FactDetalles[Quantity] < 5, "Cliente en ascenso",
+        FactDetalles[Quantity] < 10, "Cliente regular",
+        FactDetalles[Quantity] < 13, || FactDetalles[Discount] > 0.75, "Cliente Premium"
+        BLANK()
+    )   -- Recuerda que 'AND' se puede representar con '&&' y 'OR' con '||'.
+
+
+

@@ -1,0 +1,43 @@
+Antigua Guatemala, Guatemala
+Arequipa, Perú
+Brasilia, Brasil
+Campeche, México
+Caracas, Venezuela
+Cartagena, Colombia
+Colonia del Sacramento, Uruguay
+Coro, Venezuela
+Río de Janeiro, Brasil
+Córdoba, Argentina
+Cuenca, Ecuador
+Cuzco, Perú
+Diamantina, Brasil
+Goiás, Brasil
+Guadalajara, México
+Guanajuato, México
+La Habana, Cuba
+Lima, Perú
+Lunenburg, Canadá
+México, México
+Morelia, México
+Oaxaca de Juárez, México
+Olinda, Brasil
+Ouro Preto, Brasil
+Panamá, Panamá
+Potosí, Bolivia
+Puebla, México
+Quebec, Canadá
+Quito, Ecuador
+Distrito del Rímac, Perú
+Salvador de Bahía, Brasil
+San Miguel de Allende, México
+Santa Cruz de Mompox, Colombia
+Santiago de Querétaro, México
+Santo Domingo, República Dominicana
+São Luis, Brasil
+St George, Bermudas
+Sucre, Bolivia
+Tlacotalpan, México
+Trinidad, Cuba
+Valparaíso, Chile
+Willemstad, Curazao
+Zacatecas, México

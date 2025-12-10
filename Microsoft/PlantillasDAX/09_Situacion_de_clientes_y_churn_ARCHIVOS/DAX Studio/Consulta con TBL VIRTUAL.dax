@@ -1,0 +1,51 @@
+﻿EVALUATE
+{
+/*--------------------------------------------------------------------
+Medida para calcular el N.º de clientes considerados nuevos.
+--------------------------------------------------------------------*/
+VAR _uFra = DATE(2020, 3, 3)
+VAR _iAnt = DATE(2019, 3, 1)
+VAR _fRec = EOMONTH( _uFra, -1 )
+VAR _iRec = EOMONTH( _uFra, -3 ) +1
+VAR _iInt = EOMONTH( _iRec, -3 ) +1
+
+VAR _tbl = 	ADDCOLUMNS(
+                VALUES(dimClientes[ID_cliente]),
+                "@Antiguo", CALCULATE(
+                                VALUES(factPedidos[ID_cliente]),
+                                DATESBETWEEN(
+                                    dimCalendario[fecha],
+                                    _iAnt,
+                                    _iInt -1
+                                )
+                            ),
+                            
+                "@Interm",  CALCULATE(
+                                VALUES(factPedidos[ID_cliente]),
+                                DATESBETWEEN(
+                                    dimCalendario[fecha],
+                                    _iInt,
+                                    _iRec -1
+                                )
+                            ),
+                "@Recien", 	CALCULATE(
+                                VALUES(factPedidos[ID_cliente]),
+                                DATESBETWEEN(
+                                    dimCalendario[fecha],
+                                    _iRec,
+                                    _fRec
+                                )
+                            )
+            )
+
+VAR _nuevos =		FILTER(
+						_tbl,
+						[@Antiguo] = 0 &&
+						[@Interm] = 0 &&
+						[@Recien] > 0
+					)
+                    
+VAR _result = 		COUNTROWS(_nuevos)
+
+RETURN				_result
+}

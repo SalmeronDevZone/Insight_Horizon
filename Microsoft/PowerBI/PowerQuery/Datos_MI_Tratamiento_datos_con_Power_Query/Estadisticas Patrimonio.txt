@@ -1,0 +1,7 @@
+Zona/región	Cultural	Natural	Mezcla	Total	Porcentaje
+África	53	38	5	96	.080
+Estados árabes	78	5	3	86	.072
+Asia y el Pacífico	189	67	12	268	.193
+Europa y Norte América	453	65	11	529	.321
+América Latina y el Caribe	96	38	8	141	.112
+Total	869	213	39	1121	100%

@@ -1,0 +1,116 @@
+<?xml version="1.0"?>
+<catalogo>
+   <Libro id="1">
+      <Autor>Alberto Ferrari y Marco Russo</Autor>
+      <Título>Definitive Guide to DAX</Título>
+      <Tema>DAX</Tema>
+      <Precio>29.73</Precio>
+      <Fecha>2019-10-01</Fecha>
+   </Libro>
+   <Libro id="2">
+      <Autor>Rob Collie</Autor>
+      <Título>Power Pivot and Power BI</Título>
+      <Tema>Excel y Power BI</Tema>
+      <Precio>18.82</Precio>
+      <Fecha>2016-01-01</Fecha>
+   </Libro>
+   <Libro id="3">
+      <Autor>Brett Powell</Autor>
+      <Título>Mastering Microsoft Power BI</Título>
+      <Tema>BI</Tema>
+      <Precio>32.74</Precio>
+      <Fecha>2018-01-01</Fecha>
+   </Libro>
+   <Libro id="4">
+      <Autor>Maslyuk Daniil</Autor>
+      <Título>Exam Ref 70-778 </Título>
+      <Tema>Certificación</Tema>
+      <Precio>21.62</Precio>
+      <Fecha>2018-01-01</Fecha>
+   </Libro>
+   <Libro id="5">
+      <Autor>Raviv Gil</Autor>
+      <Título>Collect, Combine, and Transform Data Using Power Query </Título>
+      <Tema>Power Query</Tema>
+      <Precio>22.63</Precio>
+      <Fecha>2019-01-01</Fecha>
+   </Libro>
+   <Libro id="6">
+      <Autor>Dan Clark</Autor>
+      <Título>Beginning Microsoft Power BI</Título>
+      <Tema>Informes</Tema>
+      <Precio>33.78</Precio>
+      <Fecha>2020-01-01</Fecha>
+    </Libro>
+   <Libro id="7">
+      <Autor>Errin O'Connor</Autor>
+      <Título>Microsoft Power BI Dashboards Step by Step</Título>
+      <Tema>Power BI</Tema>
+      <Precio>34.49</Precio>
+      <Fecha>2018-01-01</Fecha>
+   </Libro>
+   <Libro id="8">
+      <Autor>Rothua Demannu</Autor>
+      <Título>Power BI in 24 Hours</Título>
+      <Tema>Power BI</Tema>
+      <Precio>10.70</Precio>
+      <Fecha>2017-01-01</Fecha>
+   </Libro>
+   <Libro id="9">
+      <Autor>Saransh Paliwal</Autor>
+      <Título>Analyzing Data with Microsoft Power BI DA100</Título>
+      <Tema>Certificación</Tema>
+      <Precio>17.06</Precio>
+      <Fecha>2020-01-01</Fecha>
+   </Libro>
+   <Libro id="10">
+      <Autor>Matt Allington</Autor>
+      <Título>Super Charge Power BI</Título>
+      <Tema>Power BI</Tema>
+      <Precio>11.99</Precio>
+      <Fecha>2018-01-01</Fecha>
+   </Libro>
+   <Libro id="11">
+      <Autor>Alberto Ferrari y Marco Russo</Autor>
+      <Título>DAX Patterns</Título>
+      <Tema>DAX</Tema>
+      <Precio>39.20</Precio>
+      <Fecha>2020-01-01</Fecha>
+   </Libro>
+   <Libro id="12">
+      <Autor>Alberto Ferrari y Marco Russo</Autor>
+      <Título>Analyzing Data with Power BI and Power Pivot</Título>
+      <Tema>Power BI y Excel</Tema>
+      <Precio>28.68</Precio>
+      <Fecha>2017-01-01</Fecha>
+   </Libro>
+    <Libro id="13">
+      <Autor>Ken Puls y Miguel Escobar</Autor>
+      <Título>M for Data Monkey</Título>
+      <Tema>Power Query</Tema>
+      <Precio>21.48</Precio>
+      <Fecha>2015-01-01</Fecha>
+   </Libro>
+   <Libro id="14">
+      <Autor>Brett Powell</Autor>
+      <Título>Microsoft Power BI Cookbook</Título>
+      <Tema>Power BI</Tema>
+      <Precio>40.45</Precio>
+      <Fecha>2017-01-01</Fecha>
+   </Libro>
+   <Libro id="15">
+      <Autor>Chris Webb</Autor>
+      <Título>Power Query for Power BI and Excel</Título>
+      <Tema>Power Query</Tema>
+      <Precio>24.41</Precio>
+      <Fecha>2014-01-01</Fecha>
+   </Libro>
+   <Libro id="16">
+      <Autor>Reza Rad</Autor>
+      <Título>Basics of Power BI Modeling</Título>
+      <Tema>Power BI Modelado</Tema>
+      <Precio>52.77</Precio>
+      <Fecha>2020-01-01</Fecha>
+   </Libro>
+</catalogo>
+

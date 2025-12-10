@@ -1,0 +1,45 @@
+﻿EVALUATE
+{
+/*--------------------------------------------------------------------
+Medida para calcular el N.º de clientes considerados nuevos.
+--------------------------------------------------------------------*/
+--Variables que almacenan las fechas que acotan los tres períodos-----
+VAR _fechUltFra =   DATE(2020, 3, 3)
+--VAR _fechUltFra =   MAX( factPedidos[fechaPedido] )
+VAR _nMesesRecien = 2 //Personalizar N.º meses del período reciente
+VAR _nMesesInterm = 2 //Personalizar N.º meses del período intermedio
+VAR _nMesesAntig =	-12 + _nMesesRecien + _nMesesInterm
+VAR _iniPostRecnt = EOMONTH( _fechUltFra, -1 ) +1
+VAR _iniReciente =  EDATE( _iniPostRecnt, _nMesesRecien*-1 )
+
+
+--Variable que almacena una tabla con clientes del período reciente--
+VAR _cliRecientes =	CALCULATETABLE(
+                        VALUES( factPedidos[ID_cliente] ),
+                        DATESINPERIOD(
+                        	dimCalendario[fecha],
+                        	_iniReciente,
+                        	2,
+                        	MONTH
+                        )
+                    )
+
+--Variable que almacena una tabla con clientes períodos interm+Antiguo
+VAR _cliInterAnt = CALCULATETABLE(
+                        VALUES( factPedidos[ID_cliente] ),
+                        DATESINPERIOD(
+                        	dimCalendario[fecha],
+                        	_iniReciente, 
+                        	_nMesesAntig, 
+                        	MONTH
+                        )
+                    )
+
+--Variable que almacena una tabla con los clientes nuevos-------------
+VAR _nuevos = 		EXCEPT( _cliRecientes, _cliInterAnt )
+
+--Variable que almacena la cantidad de clientes nuevos----------------
+VAR _result =       COUNTROWS( _nuevos )
+
+RETURN              _result
+}

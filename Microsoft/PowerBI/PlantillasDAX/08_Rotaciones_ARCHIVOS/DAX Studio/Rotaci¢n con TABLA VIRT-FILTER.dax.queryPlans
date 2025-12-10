@@ -1,0 +1,1396 @@
+{
+  "FileFormatVersion": 3,
+  "PhysicalQueryPlanRows": [
+    {
+      "Records": null,
+      "Operation": "AddColumns: IterPhyOp LogOp=AddColumns IterCols(0)(''[Value])",
+      "IndentedOperation": "AddColumns: IterPhyOp LogOp=AddColumns IterCols(0)(''[Value])",
+      "Level": 0,
+      "RowNumber": 1,
+      "NextSiblingRowNumber": 114,
+      "HighlightRow": false
+    },
+    {
+      "Records": null,
+      "Operation": "SingletonTable: IterPhyOp LogOp=AddColumns",
+      "IndentedOperation": "    SingletonTable: IterPhyOp LogOp=AddColumns",
+      "Level": 1,
+      "RowNumber": 2,
+      "NextSiblingRowNumber": 2,
+      "HighlightRow": false
+    },
+    {
+      "Records": 0,
+      "Operation": "SpoolLookup: LookupPhyOp LogOp=Divide Double #Records=0 #KeyCols=0 #ValueCols=1 DominantValue=BLANK",
+      "IndentedOperation": "    SpoolLookup: LookupPhyOp LogOp=Divide Double #Records=0 #KeyCols=0 #ValueCols=1 DominantValue=BLANK",
+      "Level": 1,
+      "RowNumber": 3,
+      "NextSiblingRowNumber": 114,
+      "HighlightRow": false
+    },
+    {
+      "Records": 0,
+      "Operation": "AggregationSpool<Copy>: SpoolPhyOp #Records=0",
+      "IndentedOperation": "        AggregationSpool<Copy>: SpoolPhyOp #Records=0",
+      "Level": 2,
+      "RowNumber": 4,
+      "NextSiblingRowNumber": 114,
+      "HighlightRow": false
+    },
+    {
+      "Records": null,
+      "Operation": "Extend_Lookup: IterPhyOp LogOp=Divide",
+      "IndentedOperation": "            Extend_Lookup: IterPhyOp LogOp=Divide",
+      "Level": 3,
+      "RowNumber": 5,
+      "NextSiblingRowNumber": 114,
+      "HighlightRow": false
+    },
+    {
+      "Records": 0,
+      "Operation": "Spool_Iterator<SpoolIterator>: IterPhyOp LogOp=ScalarVarProxy #Records=0 #KeyCols=0 #ValueCols=1",
+      "IndentedOperation": "                Spool_Iterator<SpoolIterator>: IterPhyOp LogOp=ScalarVarProxy #Records=0 #KeyCols=0 #ValueCols=1",
+      "Level": 4,
+      "RowNumber": 6,
+      "NextSiblingRowNumber": 13,
+      "HighlightRow": false
+    },
+    {
+      "Records": 0,
+      "Operation": "AggregationSpool<Copy>: SpoolPhyOp #Records=0",
+      "IndentedOperation": "                    AggregationSpool<Copy>: SpoolPhyOp #Records=0",
+      "Level": 5,
+      "RowNumber": 7,
+      "NextSiblingRowNumber": 13,
+      "HighlightRow": false
+    },
+    {
+      "Records": null,
+      "Operation": "Extend_Lookup: IterPhyOp LogOp=Multiply",
+      "IndentedOperation": "                        Extend_Lookup: IterPhyOp LogOp=Multiply",
+      "Level": 6,
+      "RowNumber": 8,
+      "NextSiblingRowNumber": 13,
+      "HighlightRow": false
+    },
+    {
+      "Records": 0,
+      "Operation": "Spool_Iterator<SpoolIterator>: IterPhyOp LogOp=Sum_Vertipaq #Records=0 #KeyCols=79 #ValueCols=1",
+      "IndentedOperation": "                            Spool_Iterator<SpoolIterator>: IterPhyOp LogOp=Sum_Vertipaq #Records=0 #KeyCols=79 #ValueCols=1",
+      "Level": 7,
+      "RowNumber": 9,
+      "NextSiblingRowNumber": 12,
+      "HighlightRow": false
+    },
+    {
+      "Records": 0,
+      "Operation": "ProjectionSpool<ProjectFusion<Copy>>: SpoolPhyOp #Records=0",
+      "IndentedOperation": "                                ProjectionSpool<ProjectFusion<Copy>>: SpoolPhyOp #Records=0",
+      "Level": 8,
+      "RowNumber": 10,
+      "NextSiblingRowNumber": 12,
+      "HighlightRow": false
+    },
+    {
+      "Records": null,
+      "Operation": "Cache: IterPhyOp #FieldCols=0 #ValueCols=1",
+      "IndentedOperation": "                                    Cache: IterPhyOp #FieldCols=0 #ValueCols=1",
+      "Level": 9,
+      "RowNumber": 11,
+      "NextSiblingRowNumber": 11,
+      "HighlightRow": true
+    },
+    {
+      "Records": null,
+      "Operation": "Constant: LookupPhyOp LogOp=Constant Integer -1",
+      "IndentedOperation": "                            Constant: LookupPhyOp LogOp=Constant Integer -1",
+      "Level": 7,
+      "RowNumber": 12,
+      "NextSiblingRowNumber": 12,
+      "HighlightRow": false
+    },
+    {
+      "Records": 1,
+      "Operation": "SpoolLookup: LookupPhyOp LogOp=Divide Double #Records=1 #KeyCols=0 #ValueCols=1 DominantValue=BLANK",
+      "IndentedOperation": "                SpoolLookup: LookupPhyOp LogOp=Divide Double #Records=1 #KeyCols=0 #ValueCols=1 DominantValue=BLANK",
+      "Level": 4,
+      "RowNumber": 13,
+      "NextSiblingRowNumber": 114,
+      "HighlightRow": false
+    },
+    {
+      "Records": 1,
+      "Operation": "AggregationSpool<Copy>: SpoolPhyOp #Records=1",
+      "IndentedOperation": "                    AggregationSpool<Copy>: SpoolPhyOp #Records=1",
+      "Level": 5,
+      "RowNumber": 14,
+      "NextSiblingRowNumber": 114,
+      "HighlightRow": false
+    },
+    {
+      "Records": null,
+      "Operation": "Extend_Lookup: IterPhyOp LogOp=Divide",
+      "IndentedOperation": "                        Extend_Lookup: IterPhyOp LogOp=Divide",
+      "Level": 6,
+      "RowNumber": 15,
+      "NextSiblingRowNumber": 114,
+      "HighlightRow": false
+    },
+    {
+      "Records": 1,
+      "Operation": "Spool_Iterator<SpoolIterator>: IterPhyOp LogOp=ScalarVarProxy #Records=1 #KeyCols=0 #ValueCols=1",
+      "IndentedOperation": "                            Spool_Iterator<SpoolIterator>: IterPhyOp LogOp=ScalarVarProxy #Records=1 #KeyCols=0 #ValueCols=1",
+      "Level": 7,
+      "RowNumber": 16,
+      "NextSiblingRowNumber": 63,
+      "HighlightRow": false
+    },
+    {
+      "Records": 1,
+      "Operation": "AggregationSpool<Sum>: SpoolPhyOp #Records=1",
+      "IndentedOperation": "                                AggregationSpool<Sum>: SpoolPhyOp #Records=1",
+      "Level": 8,
+      "RowNumber": 17,
+      "NextSiblingRowNumber": 63,
+      "HighlightRow": false
+    },
+    {
+      "Records": null,
+      "Operation": "Extend_Lookup: IterPhyOp LogOp=Extend_Lookup''[@Ud Acum] IterCols(1)(''[@Ud Acum])",
+      "IndentedOperation": "                                    Extend_Lookup: IterPhyOp LogOp=Extend_Lookup''[@Ud Acum] IterCols(1)(''[@Ud Acum])",
+      "Level": 9,
+      "RowNumber": 18,
+      "NextSiblingRowNumber": 63,
+      "HighlightRow": false
+    },
+    {
+      "Records": null,
+      "Operation": "Proxy: IterPhyOp LogOp=TableVarProxy IterCols(0, 1)('dimCalendario'[añoMes], ''[@Ud Acum])",
+      "IndentedOperation": "                                        Proxy: IterPhyOp LogOp=TableVarProxy IterCols(0, 1)('dimCalendario'[añoMes], ''[@Ud Acum])",
+      "Level": 10,
+      "RowNumber": 19,
+      "NextSiblingRowNumber": 62,
+      "HighlightRow": false
+    },
+    {
+      "Records": 132,
+      "Operation": "Spool_Iterator<SpoolIterator>: IterPhyOp LogOp=AddColumns IterCols(0, 1)('dimCalendario'[añoMes], ''[@Ud Acum]) #Records=132 #KeyCols=2 #ValueCols=0",
+      "IndentedOperation": "                                            Spool_Iterator<SpoolIterator>: IterPhyOp LogOp=AddColumns IterCols(0, 1)('dimCalendario'[añoMes], ''[@Ud Acum]) #Records=132 #KeyCols=2 #ValueCols=0",
+      "Level": 11,
+      "RowNumber": 20,
+      "NextSiblingRowNumber": 62,
+      "HighlightRow": false
+    },
+    {
+      "Records": 132,
+      "Operation": "AggregationSpool<GroupBy>: SpoolPhyOp #Records=132",
+      "IndentedOperation": "                                                AggregationSpool<GroupBy>: SpoolPhyOp #Records=132",
+      "Level": 12,
+      "RowNumber": 21,
+      "NextSiblingRowNumber": 62,
+      "HighlightRow": false
+    },
+    {
+      "Records": null,
+      "Operation": "AddColumns: IterPhyOp LogOp=AddColumns IterCols(0, 1)('dimCalendario'[añoMes], ''[@Ud Acum])",
+      "IndentedOperation": "                                                    AddColumns: IterPhyOp LogOp=AddColumns IterCols(0, 1)('dimCalendario'[añoMes], ''[@Ud Acum])",
+      "Level": 13,
+      "RowNumber": 22,
+      "NextSiblingRowNumber": 62,
+      "HighlightRow": false
+    },
+    {
+      "Records": 132,
+      "Operation": "Spool_Iterator<SpoolIterator>: IterPhyOp LogOp=GroupBy_Vertipaq IterCols(0)('dimCalendario'[añoMes]) #Records=132 #KeyCols=79 #ValueCols=0",
+      "IndentedOperation": "                                                        Spool_Iterator<SpoolIterator>: IterPhyOp LogOp=GroupBy_Vertipaq IterCols(0)('dimCalendario'[añoMes]) #Records=132 #KeyCols=79 #ValueCols=0",
+      "Level": 14,
+      "RowNumber": 23,
+      "NextSiblingRowNumber": 26,
+      "HighlightRow": false
+    },
+    {
+      "Records": 132,
+      "Operation": "ProjectionSpool<ProjectFusion<>>: SpoolPhyOp #Records=132",
+      "IndentedOperation": "                                                            ProjectionSpool<ProjectFusion<>>: SpoolPhyOp #Records=132",
+      "Level": 15,
+      "RowNumber": 24,
+      "NextSiblingRowNumber": 26,
+      "HighlightRow": false
+    },
+    {
+      "Records": null,
+      "Operation": "Cache: IterPhyOp #FieldCols=1 #ValueCols=0",
+      "IndentedOperation": "                                                                Cache: IterPhyOp #FieldCols=1 #ValueCols=0",
+      "Level": 16,
+      "RowNumber": 25,
+      "NextSiblingRowNumber": 25,
+      "HighlightRow": true
+    },
+    {
+      "Records": 128,
+      "Operation": "SpoolLookup: LookupPhyOp LogOp=Sum_Vertipaq LookupCols(0)('dimCalendario'[añoMes]) Integer #Records=128 #KeyCols=1 #ValueCols=1 DominantValue=BLANK",
+      "IndentedOperation": "                                                        SpoolLookup: LookupPhyOp LogOp=Sum_Vertipaq LookupCols(0)('dimCalendario'[añoMes]) Integer #Records=128 #KeyCols=1 #ValueCols=1 DominantValue=BLANK",
+      "Level": 14,
+      "RowNumber": 26,
+      "NextSiblingRowNumber": 62,
+      "HighlightRow": false
+    },
+    {
+      "Records": 128,
+      "Operation": "AggregationSpool<AggFusion<Sum>>: SpoolPhyOp #Records=128",
+      "IndentedOperation": "                                                            AggregationSpool<AggFusion<Sum>>: SpoolPhyOp #Records=128",
+      "Level": 15,
+      "RowNumber": 27,
+      "NextSiblingRowNumber": 62,
+      "HighlightRow": false
+    },
+    {
+      "Records": null,
+      "Operation": "CrossApply: IterPhyOp LogOp=Sum_Vertipaq IterCols(0)('dimCalendario'[añoMes])",
+      "IndentedOperation": "                                                                CrossApply: IterPhyOp LogOp=Sum_Vertipaq IterCols(0)('dimCalendario'[añoMes])",
+      "Level": 16,
+      "RowNumber": 28,
+      "NextSiblingRowNumber": 62,
+      "HighlightRow": false
+    },
+    {
+      "Records": 267202,
+      "Operation": "Spool_MultiValuedHashLookup: IterPhyOp LogOp=Filter LookupCols(1)('dimCalendario'[fecha]) IterCols(0)('dimCalendario'[añoMes]) #Records=267202 #KeyCols=2 #ValueCols=0",
+      "IndentedOperation": "                                                                    Spool_MultiValuedHashLookup: IterPhyOp LogOp=Filter LookupCols(1)('dimCalendario'[fecha]) IterCols(0)('dimCalendario'[añoMes]) #Records=267202 #KeyCols=2 #ValueCols=0",
+      "Level": 17,
+      "RowNumber": 29,
+      "NextSiblingRowNumber": 45,
+      "HighlightRow": false
+    },
+    {
+      "Records": 267202,
+      "Operation": "AggregationSpool<GroupBy>: SpoolPhyOp #Records=267202",
+      "IndentedOperation": "                                                                        AggregationSpool<GroupBy>: SpoolPhyOp #Records=267202",
+      "Level": 18,
+      "RowNumber": 30,
+      "NextSiblingRowNumber": 45,
+      "HighlightRow": false
+    },
+    {
+      "Records": null,
+      "Operation": "Filter: IterPhyOp LogOp=Filter IterCols(0, 1)('dimCalendario'[añoMes], 'dimCalendario'[fecha])",
+      "IndentedOperation": "                                                                            Filter: IterPhyOp LogOp=Filter IterCols(0, 1)('dimCalendario'[añoMes], 'dimCalendario'[fecha])",
+      "Level": 19,
+      "RowNumber": 31,
+      "NextSiblingRowNumber": 45,
+      "HighlightRow": false
+    },
+    {
+      "Records": null,
+      "Operation": "Extend_Lookup: IterPhyOp LogOp=LessThanOrEqualTo IterCols(0, 1)('dimCalendario'[añoMes], 'dimCalendario'[fecha])",
+      "IndentedOperation": "                                                                                Extend_Lookup: IterPhyOp LogOp=LessThanOrEqualTo IterCols(0, 1)('dimCalendario'[añoMes], 'dimCalendario'[fecha])",
+      "Level": 20,
+      "RowNumber": 32,
+      "NextSiblingRowNumber": 45,
+      "HighlightRow": false
+    },
+    {
+      "Records": null,
+      "Operation": "CrossApply: IterPhyOp LogOp=LessThanOrEqualTo IterCols(0, 1)('dimCalendario'[añoMes], 'dimCalendario'[fecha])",
+      "IndentedOperation": "                                                                                    CrossApply: IterPhyOp LogOp=LessThanOrEqualTo IterCols(0, 1)('dimCalendario'[añoMes], 'dimCalendario'[fecha])",
+      "Level": 21,
+      "RowNumber": 33,
+      "NextSiblingRowNumber": 40,
+      "HighlightRow": false
+    },
+    {
+      "Records": 132,
+      "Operation": "Spool_Iterator<SpoolIterator>: IterPhyOp LogOp=GroupBy_Vertipaq IterCols(0)('dimCalendario'[añoMes]) #Records=132 #KeyCols=79 #ValueCols=0",
+      "IndentedOperation": "                                                                                        Spool_Iterator<SpoolIterator>: IterPhyOp LogOp=GroupBy_Vertipaq IterCols(0)('dimCalendario'[añoMes]) #Records=132 #KeyCols=79 #ValueCols=0",
+      "Level": 22,
+      "RowNumber": 34,
+      "NextSiblingRowNumber": 37,
+      "HighlightRow": false
+    },
+    {
+      "Records": 132,
+      "Operation": "ProjectionSpool<ProjectFusion<>>: SpoolPhyOp #Records=132",
+      "IndentedOperation": "                                                                                            ProjectionSpool<ProjectFusion<>>: SpoolPhyOp #Records=132",
+      "Level": 23,
+      "RowNumber": 35,
+      "NextSiblingRowNumber": 37,
+      "HighlightRow": false
+    },
+    {
+      "Records": null,
+      "Operation": "Cache: IterPhyOp #FieldCols=1 #ValueCols=0",
+      "IndentedOperation": "                                                                                                Cache: IterPhyOp #FieldCols=1 #ValueCols=0",
+      "Level": 24,
+      "RowNumber": 36,
+      "NextSiblingRowNumber": 36,
+      "HighlightRow": true
+    },
+    {
+      "Records": 4019,
+      "Operation": "Spool_Iterator<SpoolIterator>: IterPhyOp LogOp=Scan_Vertipaq IterCols(1)('dimCalendario'[fecha]) #Records=4019 #KeyCols=79 #ValueCols=0",
+      "IndentedOperation": "                                                                                        Spool_Iterator<SpoolIterator>: IterPhyOp LogOp=Scan_Vertipaq IterCols(1)('dimCalendario'[fecha]) #Records=4019 #KeyCols=79 #ValueCols=0",
+      "Level": 22,
+      "RowNumber": 37,
+      "NextSiblingRowNumber": 40,
+      "HighlightRow": false
+    },
+    {
+      "Records": 4019,
+      "Operation": "ProjectionSpool<ProjectFusion<>>: SpoolPhyOp #Records=4019",
+      "IndentedOperation": "                                                                                            ProjectionSpool<ProjectFusion<>>: SpoolPhyOp #Records=4019",
+      "Level": 23,
+      "RowNumber": 38,
+      "NextSiblingRowNumber": 40,
+      "HighlightRow": false
+    },
+    {
+      "Records": null,
+      "Operation": "Cache: IterPhyOp #FieldCols=1 #ValueCols=0",
+      "IndentedOperation": "                                                                                                Cache: IterPhyOp #FieldCols=1 #ValueCols=0",
+      "Level": 24,
+      "RowNumber": 39,
+      "NextSiblingRowNumber": 39,
+      "HighlightRow": true
+    },
+    {
+      "Records": null,
+      "Operation": "LessThanOrEqualTo: LookupPhyOp LogOp=LessThanOrEqualTo LookupCols(0, 1)('dimCalendario'[añoMes], 'dimCalendario'[fecha]) Boolean",
+      "IndentedOperation": "                                                                                    LessThanOrEqualTo: LookupPhyOp LogOp=LessThanOrEqualTo LookupCols(0, 1)('dimCalendario'[añoMes], 'dimCalendario'[fecha]) Boolean",
+      "Level": 21,
+      "RowNumber": 40,
+      "NextSiblingRowNumber": 45,
+      "HighlightRow": false
+    },
+    {
+      "Records": null,
+      "Operation": "ColValue<'dimCalendario'[fecha]>: LookupPhyOp LogOp=ColValue<'dimCalendario'[fecha]>'dimCalendario'[fecha] LookupCols(1)('dimCalendario'[fecha]) DateTime",
+      "IndentedOperation": "                                                                                        ColValue<'dimCalendario'[fecha]>: LookupPhyOp LogOp=ColValue<'dimCalendario'[fecha]>'dimCalendario'[fecha] LookupCols(1)('dimCalendario'[fecha]) DateTime",
+      "Level": 22,
+      "RowNumber": 41,
+      "NextSiblingRowNumber": 41,
+      "HighlightRow": false
+    },
+    {
+      "Records": 132,
+      "Operation": "SpoolLookup: LookupPhyOp LogOp=Max_Vertipaq LookupCols(0)('dimCalendario'[añoMes]) DateTime #Records=132 #KeyCols=79 #ValueCols=1 DominantValue=BLANK",
+      "IndentedOperation": "                                                                                        SpoolLookup: LookupPhyOp LogOp=Max_Vertipaq LookupCols(0)('dimCalendario'[añoMes]) DateTime #Records=132 #KeyCols=79 #ValueCols=1 DominantValue=BLANK",
+      "Level": 22,
+      "RowNumber": 42,
+      "NextSiblingRowNumber": 45,
+      "HighlightRow": false
+    },
+    {
+      "Records": 132,
+      "Operation": "ProjectionSpool<ProjectFusion<Copy>>: SpoolPhyOp #Records=132",
+      "IndentedOperation": "                                                                                            ProjectionSpool<ProjectFusion<Copy>>: SpoolPhyOp #Records=132",
+      "Level": 23,
+      "RowNumber": 43,
+      "NextSiblingRowNumber": 45,
+      "HighlightRow": false
+    },
+    {
+      "Records": null,
+      "Operation": "Cache: IterPhyOp #FieldCols=1 #ValueCols=1",
+      "IndentedOperation": "                                                                                                Cache: IterPhyOp #FieldCols=1 #ValueCols=1",
+      "Level": 24,
+      "RowNumber": 44,
+      "NextSiblingRowNumber": 44,
+      "HighlightRow": true
+    },
+    {
+      "Records": null,
+      "Operation": "Cache: IterPhyOp #FieldCols=1 #ValueCols=1",
+      "IndentedOperation": "                                                                    Cache: IterPhyOp #FieldCols=1 #ValueCols=1",
+      "Level": 17,
+      "RowNumber": 45,
+      "NextSiblingRowNumber": 62,
+      "HighlightRow": true
+    },
+    {
+      "Records": 267202,
+      "Operation": "Spool_Iterator<SpoolIterator>: IterPhyOp LogOp=Filter IterCols(0, 1)('dimCalendario'[añoMes], 'dimCalendario'[fecha]) #Records=267202 #KeyCols=2 #ValueCols=0",
+      "IndentedOperation": "                                                                        Spool_Iterator<SpoolIterator>: IterPhyOp LogOp=Filter IterCols(0, 1)('dimCalendario'[añoMes], 'dimCalendario'[fecha]) #Records=267202 #KeyCols=2 #ValueCols=0",
+      "Level": 18,
+      "RowNumber": 46,
+      "NextSiblingRowNumber": 62,
+      "HighlightRow": false
+    },
+    {
+      "Records": 267202,
+      "Operation": "AggregationSpool<GroupBy>: SpoolPhyOp #Records=267202",
+      "IndentedOperation": "                                                                            AggregationSpool<GroupBy>: SpoolPhyOp #Records=267202",
+      "Level": 19,
+      "RowNumber": 47,
+      "NextSiblingRowNumber": 62,
+      "HighlightRow": false
+    },
+    {
+      "Records": null,
+      "Operation": "Filter: IterPhyOp LogOp=Filter IterCols(0, 1)('dimCalendario'[añoMes], 'dimCalendario'[fecha])",
+      "IndentedOperation": "                                                                                Filter: IterPhyOp LogOp=Filter IterCols(0, 1)('dimCalendario'[añoMes], 'dimCalendario'[fecha])",
+      "Level": 20,
+      "RowNumber": 48,
+      "NextSiblingRowNumber": 62,
+      "HighlightRow": false
+    },
+    {
+      "Records": null,
+      "Operation": "Extend_Lookup: IterPhyOp LogOp=LessThanOrEqualTo IterCols(0, 1)('dimCalendario'[añoMes], 'dimCalendario'[fecha])",
+      "IndentedOperation": "                                                                                    Extend_Lookup: IterPhyOp LogOp=LessThanOrEqualTo IterCols(0, 1)('dimCalendario'[añoMes], 'dimCalendario'[fecha])",
+      "Level": 21,
+      "RowNumber": 49,
+      "NextSiblingRowNumber": 62,
+      "HighlightRow": false
+    },
+    {
+      "Records": null,
+      "Operation": "CrossApply: IterPhyOp LogOp=LessThanOrEqualTo IterCols(0, 1)('dimCalendario'[añoMes], 'dimCalendario'[fecha])",
+      "IndentedOperation": "                                                                                        CrossApply: IterPhyOp LogOp=LessThanOrEqualTo IterCols(0, 1)('dimCalendario'[añoMes], 'dimCalendario'[fecha])",
+      "Level": 22,
+      "RowNumber": 50,
+      "NextSiblingRowNumber": 57,
+      "HighlightRow": false
+    },
+    {
+      "Records": 132,
+      "Operation": "Spool_Iterator<SpoolIterator>: IterPhyOp LogOp=GroupBy_Vertipaq IterCols(0)('dimCalendario'[añoMes]) #Records=132 #KeyCols=79 #ValueCols=0",
+      "IndentedOperation": "                                                                                            Spool_Iterator<SpoolIterator>: IterPhyOp LogOp=GroupBy_Vertipaq IterCols(0)('dimCalendario'[añoMes]) #Records=132 #KeyCols=79 #ValueCols=0",
+      "Level": 23,
+      "RowNumber": 51,
+      "NextSiblingRowNumber": 54,
+      "HighlightRow": false
+    },
+    {
+      "Records": 132,
+      "Operation": "ProjectionSpool<ProjectFusion<>>: SpoolPhyOp #Records=132",
+      "IndentedOperation": "                                                                                                ProjectionSpool<ProjectFusion<>>: SpoolPhyOp #Records=132",
+      "Level": 24,
+      "RowNumber": 52,
+      "NextSiblingRowNumber": 54,
+      "HighlightRow": false
+    },
+    {
+      "Records": null,
+      "Operation": "Cache: IterPhyOp #FieldCols=1 #ValueCols=0",
+      "IndentedOperation": "                                                                                                    Cache: IterPhyOp #FieldCols=1 #ValueCols=0",
+      "Level": 25,
+      "RowNumber": 53,
+      "NextSiblingRowNumber": 53,
+      "HighlightRow": true
+    },
+    {
+      "Records": 4019,
+      "Operation": "Spool_Iterator<SpoolIterator>: IterPhyOp LogOp=Scan_Vertipaq IterCols(1)('dimCalendario'[fecha]) #Records=4019 #KeyCols=79 #ValueCols=0",
+      "IndentedOperation": "                                                                                            Spool_Iterator<SpoolIterator>: IterPhyOp LogOp=Scan_Vertipaq IterCols(1)('dimCalendario'[fecha]) #Records=4019 #KeyCols=79 #ValueCols=0",
+      "Level": 23,
+      "RowNumber": 54,
+      "NextSiblingRowNumber": 57,
+      "HighlightRow": false
+    },
+    {
+      "Records": 4019,
+      "Operation": "ProjectionSpool<ProjectFusion<>>: SpoolPhyOp #Records=4019",
+      "IndentedOperation": "                                                                                                ProjectionSpool<ProjectFusion<>>: SpoolPhyOp #Records=4019",
+      "Level": 24,
+      "RowNumber": 55,
+      "NextSiblingRowNumber": 57,
+      "HighlightRow": false
+    },
+    {
+      "Records": null,
+      "Operation": "Cache: IterPhyOp #FieldCols=1 #ValueCols=0",
+      "IndentedOperation": "                                                                                                    Cache: IterPhyOp #FieldCols=1 #ValueCols=0",
+      "Level": 25,
+      "RowNumber": 56,
+      "NextSiblingRowNumber": 56,
+      "HighlightRow": true
+    },
+    {
+      "Records": null,
+      "Operation": "LessThanOrEqualTo: LookupPhyOp LogOp=LessThanOrEqualTo LookupCols(0, 1)('dimCalendario'[añoMes], 'dimCalendario'[fecha]) Boolean",
+      "IndentedOperation": "                                                                                        LessThanOrEqualTo: LookupPhyOp LogOp=LessThanOrEqualTo LookupCols(0, 1)('dimCalendario'[añoMes], 'dimCalendario'[fecha]) Boolean",
+      "Level": 22,
+      "RowNumber": 57,
+      "NextSiblingRowNumber": 62,
+      "HighlightRow": false
+    },
+    {
+      "Records": null,
+      "Operation": "ColValue<'dimCalendario'[fecha]>: LookupPhyOp LogOp=ColValue<'dimCalendario'[fecha]>'dimCalendario'[fecha] LookupCols(1)('dimCalendario'[fecha]) DateTime",
+      "IndentedOperation": "                                                                                            ColValue<'dimCalendario'[fecha]>: LookupPhyOp LogOp=ColValue<'dimCalendario'[fecha]>'dimCalendario'[fecha] LookupCols(1)('dimCalendario'[fecha]) DateTime",
+      "Level": 23,
+      "RowNumber": 58,
+      "NextSiblingRowNumber": 58,
+      "HighlightRow": false
+    },
+    {
+      "Records": 132,
+      "Operation": "SpoolLookup: LookupPhyOp LogOp=Max_Vertipaq LookupCols(0)('dimCalendario'[añoMes]) DateTime #Records=132 #KeyCols=79 #ValueCols=1 DominantValue=BLANK",
+      "IndentedOperation": "                                                                                            SpoolLookup: LookupPhyOp LogOp=Max_Vertipaq LookupCols(0)('dimCalendario'[añoMes]) DateTime #Records=132 #KeyCols=79 #ValueCols=1 DominantValue=BLANK",
+      "Level": 23,
+      "RowNumber": 59,
+      "NextSiblingRowNumber": 62,
+      "HighlightRow": false
+    },
+    {
+      "Records": 132,
+      "Operation": "ProjectionSpool<ProjectFusion<Copy>>: SpoolPhyOp #Records=132",
+      "IndentedOperation": "                                                                                                ProjectionSpool<ProjectFusion<Copy>>: SpoolPhyOp #Records=132",
+      "Level": 24,
+      "RowNumber": 60,
+      "NextSiblingRowNumber": 62,
+      "HighlightRow": false
+    },
+    {
+      "Records": null,
+      "Operation": "Cache: IterPhyOp #FieldCols=1 #ValueCols=1",
+      "IndentedOperation": "                                                                                                    Cache: IterPhyOp #FieldCols=1 #ValueCols=1",
+      "Level": 25,
+      "RowNumber": 61,
+      "NextSiblingRowNumber": 61,
+      "HighlightRow": true
+    },
+    {
+      "Records": null,
+      "Operation": "ColValue<''[@Ud Acum]>: LookupPhyOp LogOp=ColValue<''[@Ud Acum]>''[@Ud Acum] LookupCols(1)(''[@Ud Acum]) Integer",
+      "IndentedOperation": "                                        ColValue<''[@Ud Acum]>: LookupPhyOp LogOp=ColValue<''[@Ud Acum]>''[@Ud Acum] LookupCols(1)(''[@Ud Acum]) Integer",
+      "Level": 10,
+      "RowNumber": 62,
+      "NextSiblingRowNumber": 62,
+      "HighlightRow": false
+    },
+    {
+      "Records": 1,
+      "Operation": "SpoolLookup: LookupPhyOp LogOp=CountRows Integer #Records=1 #KeyCols=0 #ValueCols=1 DominantValue=BLANK",
+      "IndentedOperation": "                            SpoolLookup: LookupPhyOp LogOp=CountRows Integer #Records=1 #KeyCols=0 #ValueCols=1 DominantValue=BLANK",
+      "Level": 7,
+      "RowNumber": 63,
+      "NextSiblingRowNumber": 114,
+      "HighlightRow": false
+    },
+    {
+      "Records": 1,
+      "Operation": "AggregationSpool<Count>: SpoolPhyOp #Records=1",
+      "IndentedOperation": "                                AggregationSpool<Count>: SpoolPhyOp #Records=1",
+      "Level": 8,
+      "RowNumber": 64,
+      "NextSiblingRowNumber": 114,
+      "HighlightRow": false
+    },
+    {
+      "Records": null,
+      "Operation": "Proxy: IterPhyOp LogOp=TableVarProxy IterCols(0, 1)('dimCalendario'[añoMes], ''[@Ud Acum])",
+      "IndentedOperation": "                                    Proxy: IterPhyOp LogOp=TableVarProxy IterCols(0, 1)('dimCalendario'[añoMes], ''[@Ud Acum])",
+      "Level": 9,
+      "RowNumber": 65,
+      "NextSiblingRowNumber": 114,
+      "HighlightRow": false
+    },
+    {
+      "Records": null,
+      "Operation": "Filter: IterPhyOp LogOp=Filter IterCols(0, 1)('dimCalendario'[añoMes], ''[@Ud Acum])",
+      "IndentedOperation": "                                        Filter: IterPhyOp LogOp=Filter IterCols(0, 1)('dimCalendario'[añoMes], ''[@Ud Acum])",
+      "Level": 10,
+      "RowNumber": 66,
+      "NextSiblingRowNumber": 114,
+      "HighlightRow": false
+    },
+    {
+      "Records": null,
+      "Operation": "Extend_Lookup: IterPhyOp LogOp=GreaterThan IterCols(1)(''[@Ud Acum])",
+      "IndentedOperation": "                                            Extend_Lookup: IterPhyOp LogOp=GreaterThan IterCols(1)(''[@Ud Acum])",
+      "Level": 11,
+      "RowNumber": 67,
+      "NextSiblingRowNumber": 114,
+      "HighlightRow": false
+    },
+    {
+      "Records": null,
+      "Operation": "Proxy: IterPhyOp LogOp=TableVarProxy IterCols(0, 1)('dimCalendario'[añoMes], ''[@Ud Acum])",
+      "IndentedOperation": "                                                Proxy: IterPhyOp LogOp=TableVarProxy IterCols(0, 1)('dimCalendario'[añoMes], ''[@Ud Acum])",
+      "Level": 12,
+      "RowNumber": 68,
+      "NextSiblingRowNumber": 111,
+      "HighlightRow": false
+    },
+    {
+      "Records": 132,
+      "Operation": "Spool_Iterator<SpoolIterator>: IterPhyOp LogOp=AddColumns IterCols(0, 1)('dimCalendario'[añoMes], ''[@Ud Acum]) #Records=132 #KeyCols=2 #ValueCols=0",
+      "IndentedOperation": "                                                    Spool_Iterator<SpoolIterator>: IterPhyOp LogOp=AddColumns IterCols(0, 1)('dimCalendario'[añoMes], ''[@Ud Acum]) #Records=132 #KeyCols=2 #ValueCols=0",
+      "Level": 13,
+      "RowNumber": 69,
+      "NextSiblingRowNumber": 111,
+      "HighlightRow": false
+    },
+    {
+      "Records": 132,
+      "Operation": "AggregationSpool<GroupBy>: SpoolPhyOp #Records=132",
+      "IndentedOperation": "                                                        AggregationSpool<GroupBy>: SpoolPhyOp #Records=132",
+      "Level": 14,
+      "RowNumber": 70,
+      "NextSiblingRowNumber": 111,
+      "HighlightRow": false
+    },
+    {
+      "Records": null,
+      "Operation": "AddColumns: IterPhyOp LogOp=AddColumns IterCols(0, 1)('dimCalendario'[añoMes], ''[@Ud Acum])",
+      "IndentedOperation": "                                                            AddColumns: IterPhyOp LogOp=AddColumns IterCols(0, 1)('dimCalendario'[añoMes], ''[@Ud Acum])",
+      "Level": 15,
+      "RowNumber": 71,
+      "NextSiblingRowNumber": 111,
+      "HighlightRow": false
+    },
+    {
+      "Records": 132,
+      "Operation": "Spool_Iterator<SpoolIterator>: IterPhyOp LogOp=GroupBy_Vertipaq IterCols(0)('dimCalendario'[añoMes]) #Records=132 #KeyCols=79 #ValueCols=0",
+      "IndentedOperation": "                                                                Spool_Iterator<SpoolIterator>: IterPhyOp LogOp=GroupBy_Vertipaq IterCols(0)('dimCalendario'[añoMes]) #Records=132 #KeyCols=79 #ValueCols=0",
+      "Level": 16,
+      "RowNumber": 72,
+      "NextSiblingRowNumber": 75,
+      "HighlightRow": false
+    },
+    {
+      "Records": 132,
+      "Operation": "ProjectionSpool<ProjectFusion<>>: SpoolPhyOp #Records=132",
+      "IndentedOperation": "                                                                    ProjectionSpool<ProjectFusion<>>: SpoolPhyOp #Records=132",
+      "Level": 17,
+      "RowNumber": 73,
+      "NextSiblingRowNumber": 75,
+      "HighlightRow": false
+    },
+    {
+      "Records": null,
+      "Operation": "Cache: IterPhyOp #FieldCols=1 #ValueCols=0",
+      "IndentedOperation": "                                                                        Cache: IterPhyOp #FieldCols=1 #ValueCols=0",
+      "Level": 18,
+      "RowNumber": 74,
+      "NextSiblingRowNumber": 74,
+      "HighlightRow": true
+    },
+    {
+      "Records": 128,
+      "Operation": "SpoolLookup: LookupPhyOp LogOp=Sum_Vertipaq LookupCols(0)('dimCalendario'[añoMes]) Integer #Records=128 #KeyCols=1 #ValueCols=1 DominantValue=BLANK",
+      "IndentedOperation": "                                                                SpoolLookup: LookupPhyOp LogOp=Sum_Vertipaq LookupCols(0)('dimCalendario'[añoMes]) Integer #Records=128 #KeyCols=1 #ValueCols=1 DominantValue=BLANK",
+      "Level": 16,
+      "RowNumber": 75,
+      "NextSiblingRowNumber": 111,
+      "HighlightRow": false
+    },
+    {
+      "Records": 128,
+      "Operation": "AggregationSpool<AggFusion<Sum>>: SpoolPhyOp #Records=128",
+      "IndentedOperation": "                                                                    AggregationSpool<AggFusion<Sum>>: SpoolPhyOp #Records=128",
+      "Level": 17,
+      "RowNumber": 76,
+      "NextSiblingRowNumber": 111,
+      "HighlightRow": false
+    },
+    {
+      "Records": null,
+      "Operation": "CrossApply: IterPhyOp LogOp=Sum_Vertipaq IterCols(0)('dimCalendario'[añoMes])",
+      "IndentedOperation": "                                                                        CrossApply: IterPhyOp LogOp=Sum_Vertipaq IterCols(0)('dimCalendario'[añoMes])",
+      "Level": 18,
+      "RowNumber": 77,
+      "NextSiblingRowNumber": 111,
+      "HighlightRow": false
+    },
+    {
+      "Records": 267202,
+      "Operation": "Spool_MultiValuedHashLookup: IterPhyOp LogOp=Filter LookupCols(1)('dimCalendario'[fecha]) IterCols(0)('dimCalendario'[añoMes]) #Records=267202 #KeyCols=2 #ValueCols=0",
+      "IndentedOperation": "                                                                            Spool_MultiValuedHashLookup: IterPhyOp LogOp=Filter LookupCols(1)('dimCalendario'[fecha]) IterCols(0)('dimCalendario'[añoMes]) #Records=267202 #KeyCols=2 #ValueCols=0",
+      "Level": 19,
+      "RowNumber": 78,
+      "NextSiblingRowNumber": 94,
+      "HighlightRow": false
+    },
+    {
+      "Records": 267202,
+      "Operation": "AggregationSpool<GroupBy>: SpoolPhyOp #Records=267202",
+      "IndentedOperation": "                                                                                AggregationSpool<GroupBy>: SpoolPhyOp #Records=267202",
+      "Level": 20,
+      "RowNumber": 79,
+      "NextSiblingRowNumber": 94,
+      "HighlightRow": false
+    },
+    {
+      "Records": null,
+      "Operation": "Filter: IterPhyOp LogOp=Filter IterCols(0, 1)('dimCalendario'[añoMes], 'dimCalendario'[fecha])",
+      "IndentedOperation": "                                                                                    Filter: IterPhyOp LogOp=Filter IterCols(0, 1)('dimCalendario'[añoMes], 'dimCalendario'[fecha])",
+      "Level": 21,
+      "RowNumber": 80,
+      "NextSiblingRowNumber": 94,
+      "HighlightRow": false
+    },
+    {
+      "Records": null,
+      "Operation": "Extend_Lookup: IterPhyOp LogOp=LessThanOrEqualTo IterCols(0, 1)('dimCalendario'[añoMes], 'dimCalendario'[fecha])",
+      "IndentedOperation": "                                                                                        Extend_Lookup: IterPhyOp LogOp=LessThanOrEqualTo IterCols(0, 1)('dimCalendario'[añoMes], 'dimCalendario'[fecha])",
+      "Level": 22,
+      "RowNumber": 81,
+      "NextSiblingRowNumber": 94,
+      "HighlightRow": false
+    },
+    {
+      "Records": null,
+      "Operation": "CrossApply: IterPhyOp LogOp=LessThanOrEqualTo IterCols(0, 1)('dimCalendario'[añoMes], 'dimCalendario'[fecha])",
+      "IndentedOperation": "                                                                                            CrossApply: IterPhyOp LogOp=LessThanOrEqualTo IterCols(0, 1)('dimCalendario'[añoMes], 'dimCalendario'[fecha])",
+      "Level": 23,
+      "RowNumber": 82,
+      "NextSiblingRowNumber": 89,
+      "HighlightRow": false
+    },
+    {
+      "Records": 132,
+      "Operation": "Spool_Iterator<SpoolIterator>: IterPhyOp LogOp=GroupBy_Vertipaq IterCols(0)('dimCalendario'[añoMes]) #Records=132 #KeyCols=79 #ValueCols=0",
+      "IndentedOperation": "                                                                                                Spool_Iterator<SpoolIterator>: IterPhyOp LogOp=GroupBy_Vertipaq IterCols(0)('dimCalendario'[añoMes]) #Records=132 #KeyCols=79 #ValueCols=0",
+      "Level": 24,
+      "RowNumber": 83,
+      "NextSiblingRowNumber": 86,
+      "HighlightRow": false
+    },
+    {
+      "Records": 132,
+      "Operation": "ProjectionSpool<ProjectFusion<>>: SpoolPhyOp #Records=132",
+      "IndentedOperation": "                                                                                                    ProjectionSpool<ProjectFusion<>>: SpoolPhyOp #Records=132",
+      "Level": 25,
+      "RowNumber": 84,
+      "NextSiblingRowNumber": 86,
+      "HighlightRow": false
+    },
+    {
+      "Records": null,
+      "Operation": "Cache: IterPhyOp #FieldCols=1 #ValueCols=0",
+      "IndentedOperation": "                                                                                                        Cache: IterPhyOp #FieldCols=1 #ValueCols=0",
+      "Level": 26,
+      "RowNumber": 85,
+      "NextSiblingRowNumber": 85,
+      "HighlightRow": true
+    },
+    {
+      "Records": 4019,
+      "Operation": "Spool_Iterator<SpoolIterator>: IterPhyOp LogOp=Scan_Vertipaq IterCols(1)('dimCalendario'[fecha]) #Records=4019 #KeyCols=79 #ValueCols=0",
+      "IndentedOperation": "                                                                                                Spool_Iterator<SpoolIterator>: IterPhyOp LogOp=Scan_Vertipaq IterCols(1)('dimCalendario'[fecha]) #Records=4019 #KeyCols=79 #ValueCols=0",
+      "Level": 24,
+      "RowNumber": 86,
+      "NextSiblingRowNumber": 89,
+      "HighlightRow": false
+    },
+    {
+      "Records": 4019,
+      "Operation": "ProjectionSpool<ProjectFusion<>>: SpoolPhyOp #Records=4019",
+      "IndentedOperation": "                                                                                                    ProjectionSpool<ProjectFusion<>>: SpoolPhyOp #Records=4019",
+      "Level": 25,
+      "RowNumber": 87,
+      "NextSiblingRowNumber": 89,
+      "HighlightRow": false
+    },
+    {
+      "Records": null,
+      "Operation": "Cache: IterPhyOp #FieldCols=1 #ValueCols=0",
+      "IndentedOperation": "                                                                                                        Cache: IterPhyOp #FieldCols=1 #ValueCols=0",
+      "Level": 26,
+      "RowNumber": 88,
+      "NextSiblingRowNumber": 88,
+      "HighlightRow": true
+    },
+    {
+      "Records": null,
+      "Operation": "LessThanOrEqualTo: LookupPhyOp LogOp=LessThanOrEqualTo LookupCols(0, 1)('dimCalendario'[añoMes], 'dimCalendario'[fecha]) Boolean",
+      "IndentedOperation": "                                                                                            LessThanOrEqualTo: LookupPhyOp LogOp=LessThanOrEqualTo LookupCols(0, 1)('dimCalendario'[añoMes], 'dimCalendario'[fecha]) Boolean",
+      "Level": 23,
+      "RowNumber": 89,
+      "NextSiblingRowNumber": 94,
+      "HighlightRow": false
+    },
+    {
+      "Records": null,
+      "Operation": "ColValue<'dimCalendario'[fecha]>: LookupPhyOp LogOp=ColValue<'dimCalendario'[fecha]>'dimCalendario'[fecha] LookupCols(1)('dimCalendario'[fecha]) DateTime",
+      "IndentedOperation": "                                                                                                ColValue<'dimCalendario'[fecha]>: LookupPhyOp LogOp=ColValue<'dimCalendario'[fecha]>'dimCalendario'[fecha] LookupCols(1)('dimCalendario'[fecha]) DateTime",
+      "Level": 24,
+      "RowNumber": 90,
+      "NextSiblingRowNumber": 90,
+      "HighlightRow": false
+    },
+    {
+      "Records": 132,
+      "Operation": "SpoolLookup: LookupPhyOp LogOp=Max_Vertipaq LookupCols(0)('dimCalendario'[añoMes]) DateTime #Records=132 #KeyCols=79 #ValueCols=1 DominantValue=BLANK",
+      "IndentedOperation": "                                                                                                SpoolLookup: LookupPhyOp LogOp=Max_Vertipaq LookupCols(0)('dimCalendario'[añoMes]) DateTime #Records=132 #KeyCols=79 #ValueCols=1 DominantValue=BLANK",
+      "Level": 24,
+      "RowNumber": 91,
+      "NextSiblingRowNumber": 94,
+      "HighlightRow": false
+    },
+    {
+      "Records": 132,
+      "Operation": "ProjectionSpool<ProjectFusion<Copy>>: SpoolPhyOp #Records=132",
+      "IndentedOperation": "                                                                                                    ProjectionSpool<ProjectFusion<Copy>>: SpoolPhyOp #Records=132",
+      "Level": 25,
+      "RowNumber": 92,
+      "NextSiblingRowNumber": 94,
+      "HighlightRow": false
+    },
+    {
+      "Records": null,
+      "Operation": "Cache: IterPhyOp #FieldCols=1 #ValueCols=1",
+      "IndentedOperation": "                                                                                                        Cache: IterPhyOp #FieldCols=1 #ValueCols=1",
+      "Level": 26,
+      "RowNumber": 93,
+      "NextSiblingRowNumber": 93,
+      "HighlightRow": true
+    },
+    {
+      "Records": null,
+      "Operation": "Cache: IterPhyOp #FieldCols=1 #ValueCols=1",
+      "IndentedOperation": "                                                                            Cache: IterPhyOp #FieldCols=1 #ValueCols=1",
+      "Level": 19,
+      "RowNumber": 94,
+      "NextSiblingRowNumber": 111,
+      "HighlightRow": true
+    },
+    {
+      "Records": 267202,
+      "Operation": "Spool_Iterator<SpoolIterator>: IterPhyOp LogOp=Filter IterCols(0, 1)('dimCalendario'[añoMes], 'dimCalendario'[fecha]) #Records=267202 #KeyCols=2 #ValueCols=0",
+      "IndentedOperation": "                                                                                Spool_Iterator<SpoolIterator>: IterPhyOp LogOp=Filter IterCols(0, 1)('dimCalendario'[añoMes], 'dimCalendario'[fecha]) #Records=267202 #KeyCols=2 #ValueCols=0",
+      "Level": 20,
+      "RowNumber": 95,
+      "NextSiblingRowNumber": 111,
+      "HighlightRow": false
+    },
+    {
+      "Records": 267202,
+      "Operation": "AggregationSpool<GroupBy>: SpoolPhyOp #Records=267202",
+      "IndentedOperation": "                                                                                    AggregationSpool<GroupBy>: SpoolPhyOp #Records=267202",
+      "Level": 21,
+      "RowNumber": 96,
+      "NextSiblingRowNumber": 111,
+      "HighlightRow": false
+    },
+    {
+      "Records": null,
+      "Operation": "Filter: IterPhyOp LogOp=Filter IterCols(0, 1)('dimCalendario'[añoMes], 'dimCalendario'[fecha])",
+      "IndentedOperation": "                                                                                        Filter: IterPhyOp LogOp=Filter IterCols(0, 1)('dimCalendario'[añoMes], 'dimCalendario'[fecha])",
+      "Level": 22,
+      "RowNumber": 97,
+      "NextSiblingRowNumber": 111,
+      "HighlightRow": false
+    },
+    {
+      "Records": null,
+      "Operation": "Extend_Lookup: IterPhyOp LogOp=LessThanOrEqualTo IterCols(0, 1)('dimCalendario'[añoMes], 'dimCalendario'[fecha])",
+      "IndentedOperation": "                                                                                            Extend_Lookup: IterPhyOp LogOp=LessThanOrEqualTo IterCols(0, 1)('dimCalendario'[añoMes], 'dimCalendario'[fecha])",
+      "Level": 23,
+      "RowNumber": 98,
+      "NextSiblingRowNumber": 111,
+      "HighlightRow": false
+    },
+    {
+      "Records": null,
+      "Operation": "CrossApply: IterPhyOp LogOp=LessThanOrEqualTo IterCols(0, 1)('dimCalendario'[añoMes], 'dimCalendario'[fecha])",
+      "IndentedOperation": "                                                                                                CrossApply: IterPhyOp LogOp=LessThanOrEqualTo IterCols(0, 1)('dimCalendario'[añoMes], 'dimCalendario'[fecha])",
+      "Level": 24,
+      "RowNumber": 99,
+      "NextSiblingRowNumber": 106,
+      "HighlightRow": false
+    },
+    {
+      "Records": 132,
+      "Operation": "Spool_Iterator<SpoolIterator>: IterPhyOp LogOp=GroupBy_Vertipaq IterCols(0)('dimCalendario'[añoMes]) #Records=132 #KeyCols=79 #ValueCols=0",
+      "IndentedOperation": "                                                                                                    Spool_Iterator<SpoolIterator>: IterPhyOp LogOp=GroupBy_Vertipaq IterCols(0)('dimCalendario'[añoMes]) #Records=132 #KeyCols=79 #ValueCols=0",
+      "Level": 25,
+      "RowNumber": 100,
+      "NextSiblingRowNumber": 103,
+      "HighlightRow": false
+    },
+    {
+      "Records": 132,
+      "Operation": "ProjectionSpool<ProjectFusion<>>: SpoolPhyOp #Records=132",
+      "IndentedOperation": "                                                                                                        ProjectionSpool<ProjectFusion<>>: SpoolPhyOp #Records=132",
+      "Level": 26,
+      "RowNumber": 101,
+      "NextSiblingRowNumber": 103,
+      "HighlightRow": false
+    },
+    {
+      "Records": null,
+      "Operation": "Cache: IterPhyOp #FieldCols=1 #ValueCols=0",
+      "IndentedOperation": "                                                                                                            Cache: IterPhyOp #FieldCols=1 #ValueCols=0",
+      "Level": 27,
+      "RowNumber": 102,
+      "NextSiblingRowNumber": 102,
+      "HighlightRow": true
+    },
+    {
+      "Records": 4019,
+      "Operation": "Spool_Iterator<SpoolIterator>: IterPhyOp LogOp=Scan_Vertipaq IterCols(1)('dimCalendario'[fecha]) #Records=4019 #KeyCols=79 #ValueCols=0",
+      "IndentedOperation": "                                                                                                    Spool_Iterator<SpoolIterator>: IterPhyOp LogOp=Scan_Vertipaq IterCols(1)('dimCalendario'[fecha]) #Records=4019 #KeyCols=79 #ValueCols=0",
+      "Level": 25,
+      "RowNumber": 103,
+      "NextSiblingRowNumber": 106,
+      "HighlightRow": false
+    },
+    {
+      "Records": 4019,
+      "Operation": "ProjectionSpool<ProjectFusion<>>: SpoolPhyOp #Records=4019",
+      "IndentedOperation": "                                                                                                        ProjectionSpool<ProjectFusion<>>: SpoolPhyOp #Records=4019",
+      "Level": 26,
+      "RowNumber": 104,
+      "NextSiblingRowNumber": 106,
+      "HighlightRow": false
+    },
+    {
+      "Records": null,
+      "Operation": "Cache: IterPhyOp #FieldCols=1 #ValueCols=0",
+      "IndentedOperation": "                                                                                                            Cache: IterPhyOp #FieldCols=1 #ValueCols=0",
+      "Level": 27,
+      "RowNumber": 105,
+      "NextSiblingRowNumber": 105,
+      "HighlightRow": true
+    },
+    {
+      "Records": null,
+      "Operation": "LessThanOrEqualTo: LookupPhyOp LogOp=LessThanOrEqualTo LookupCols(0, 1)('dimCalendario'[añoMes], 'dimCalendario'[fecha]) Boolean",
+      "IndentedOperation": "                                                                                                LessThanOrEqualTo: LookupPhyOp LogOp=LessThanOrEqualTo LookupCols(0, 1)('dimCalendario'[añoMes], 'dimCalendario'[fecha]) Boolean",
+      "Level": 24,
+      "RowNumber": 106,
+      "NextSiblingRowNumber": 111,
+      "HighlightRow": false
+    },
+    {
+      "Records": null,
+      "Operation": "ColValue<'dimCalendario'[fecha]>: LookupPhyOp LogOp=ColValue<'dimCalendario'[fecha]>'dimCalendario'[fecha] LookupCols(1)('dimCalendario'[fecha]) DateTime",
+      "IndentedOperation": "                                                                                                    ColValue<'dimCalendario'[fecha]>: LookupPhyOp LogOp=ColValue<'dimCalendario'[fecha]>'dimCalendario'[fecha] LookupCols(1)('dimCalendario'[fecha]) DateTime",
+      "Level": 25,
+      "RowNumber": 107,
+      "NextSiblingRowNumber": 107,
+      "HighlightRow": false
+    },
+    {
+      "Records": 132,
+      "Operation": "SpoolLookup: LookupPhyOp LogOp=Max_Vertipaq LookupCols(0)('dimCalendario'[añoMes]) DateTime #Records=132 #KeyCols=79 #ValueCols=1 DominantValue=BLANK",
+      "IndentedOperation": "                                                                                                    SpoolLookup: LookupPhyOp LogOp=Max_Vertipaq LookupCols(0)('dimCalendario'[añoMes]) DateTime #Records=132 #KeyCols=79 #ValueCols=1 DominantValue=BLANK",
+      "Level": 25,
+      "RowNumber": 108,
+      "NextSiblingRowNumber": 111,
+      "HighlightRow": false
+    },
+    {
+      "Records": 132,
+      "Operation": "ProjectionSpool<ProjectFusion<Copy>>: SpoolPhyOp #Records=132",
+      "IndentedOperation": "                                                                                                        ProjectionSpool<ProjectFusion<Copy>>: SpoolPhyOp #Records=132",
+      "Level": 26,
+      "RowNumber": 109,
+      "NextSiblingRowNumber": 111,
+      "HighlightRow": false
+    },
+    {
+      "Records": null,
+      "Operation": "Cache: IterPhyOp #FieldCols=1 #ValueCols=1",
+      "IndentedOperation": "                                                                                                            Cache: IterPhyOp #FieldCols=1 #ValueCols=1",
+      "Level": 27,
+      "RowNumber": 110,
+      "NextSiblingRowNumber": 110,
+      "HighlightRow": true
+    },
+    {
+      "Records": null,
+      "Operation": "GreaterThan: LookupPhyOp LogOp=GreaterThan LookupCols(1)(''[@Ud Acum]) Boolean",
+      "IndentedOperation": "                                                GreaterThan: LookupPhyOp LogOp=GreaterThan LookupCols(1)(''[@Ud Acum]) Boolean",
+      "Level": 12,
+      "RowNumber": 111,
+      "NextSiblingRowNumber": 114,
+      "HighlightRow": false
+    },
+    {
+      "Records": null,
+      "Operation": "ColValue<''[@Ud Acum]>: LookupPhyOp LogOp=ColValue<''[@Ud Acum]>''[@Ud Acum] LookupCols(1)(''[@Ud Acum]) Integer",
+      "IndentedOperation": "                                                    ColValue<''[@Ud Acum]>: LookupPhyOp LogOp=ColValue<''[@Ud Acum]>''[@Ud Acum] LookupCols(1)(''[@Ud Acum]) Integer",
+      "Level": 13,
+      "RowNumber": 112,
+      "NextSiblingRowNumber": 112,
+      "HighlightRow": false
+    },
+    {
+      "Records": null,
+      "Operation": "Constant: LookupPhyOp LogOp=Constant Integer 0",
+      "IndentedOperation": "                                                    Constant: LookupPhyOp LogOp=Constant Integer 0",
+      "Level": 13,
+      "RowNumber": 113,
+      "NextSiblingRowNumber": 114,
+      "HighlightRow": false
+    }
+  ],
+  "LogicalQueryPlanRows": [
+    {
+      "Operation": "AddColumns: RelLogOp DependOnCols()() 0-0 RequiredCols(0)(''[Value])",
+      "IndentedOperation": "AddColumns: RelLogOp DependOnCols()() 0-0 RequiredCols(0)(''[Value])",
+      "Level": 0,
+      "RowNumber": 1,
+      "NextSiblingRowNumber": 47,
+      "HighlightRow": false
+    },
+    {
+      "Operation": "VarScope: ScaLogOp DependOnCols()() Double DominantValue=BLANK",
+      "IndentedOperation": "    VarScope: ScaLogOp DependOnCols()() Double DominantValue=BLANK",
+      "Level": 1,
+      "RowNumber": 2,
+      "NextSiblingRowNumber": 47,
+      "HighlightRow": false
+    },
+    {
+      "Operation": "Calculate: ScaLogOp VarName=_salidas DependOnCols()() Integer DominantValue=BLANK",
+      "IndentedOperation": "        Calculate: ScaLogOp VarName=_salidas DependOnCols()() Integer DominantValue=BLANK",
+      "Level": 2,
+      "RowNumber": 3,
+      "NextSiblingRowNumber": 14,
+      "HighlightRow": false
+    },
+    {
+      "Operation": "Multiply: ScaLogOp DependOnCols()() Integer DominantValue=BLANK",
+      "IndentedOperation": "            Multiply: ScaLogOp DependOnCols()() Integer DominantValue=BLANK",
+      "Level": 3,
+      "RowNumber": 4,
+      "NextSiblingRowNumber": 9,
+      "HighlightRow": false
+    },
+    {
+      "Operation": "Sum_Vertipaq: ScaLogOp DependOnCols()() Integer DominantValue=BLANK",
+      "IndentedOperation": "                Sum_Vertipaq: ScaLogOp DependOnCols()() Integer DominantValue=BLANK",
+      "Level": 4,
+      "RowNumber": 5,
+      "NextSiblingRowNumber": 8,
+      "HighlightRow": false
+    },
+    {
+      "Operation": "Scan_Vertipaq: RelLogOp DependOnCols()() 1-74 RequiredCols(40)('factPedidos'[ud])",
+      "IndentedOperation": "                    Scan_Vertipaq: RelLogOp DependOnCols()() 1-74 RequiredCols(40)('factPedidos'[ud])",
+      "Level": 5,
+      "RowNumber": 6,
+      "NextSiblingRowNumber": 6,
+      "HighlightRow": false
+    },
+    {
+      "Operation": "'factPedidos'[ud]: ScaLogOp DependOnCols(40)('factPedidos'[ud]) Integer DominantValue=NONE",
+      "IndentedOperation": "                    'factPedidos'[ud]: ScaLogOp DependOnCols(40)('factPedidos'[ud]) Integer DominantValue=NONE",
+      "Level": 5,
+      "RowNumber": 7,
+      "NextSiblingRowNumber": 7,
+      "HighlightRow": false
+    },
+    {
+      "Operation": "Constant: ScaLogOp DependOnCols()() Integer DominantValue=-1",
+      "IndentedOperation": "                Constant: ScaLogOp DependOnCols()() Integer DominantValue=-1",
+      "Level": 4,
+      "RowNumber": 8,
+      "NextSiblingRowNumber": 8,
+      "HighlightRow": false
+    },
+    {
+      "Operation": "Filter_Vertipaq: RelLogOp DependOnCols()() 0-0 RequiredCols(0)('factPedidos'[ud])",
+      "IndentedOperation": "            Filter_Vertipaq: RelLogOp DependOnCols()() 0-0 RequiredCols(0)('factPedidos'[ud])",
+      "Level": 3,
+      "RowNumber": 9,
+      "NextSiblingRowNumber": 14,
+      "HighlightRow": false
+    },
+    {
+      "Operation": "Scan_Vertipaq: RelLogOp DependOnCols()() 0-0 RequiredCols(0)('factPedidos'[ud])",
+      "IndentedOperation": "                Scan_Vertipaq: RelLogOp DependOnCols()() 0-0 RequiredCols(0)('factPedidos'[ud])",
+      "Level": 4,
+      "RowNumber": 10,
+      "NextSiblingRowNumber": 10,
+      "HighlightRow": false
+    },
+    {
+      "Operation": "LessThan: ScaLogOp DependOnCols(0)('factPedidos'[ud]) Boolean DominantValue=NONE",
+      "IndentedOperation": "                LessThan: ScaLogOp DependOnCols(0)('factPedidos'[ud]) Boolean DominantValue=NONE",
+      "Level": 4,
+      "RowNumber": 11,
+      "NextSiblingRowNumber": 14,
+      "HighlightRow": false
+    },
+    {
+      "Operation": "'factPedidos'[ud]: ScaLogOp DependOnCols(0)('factPedidos'[ud]) Integer DominantValue=NONE",
+      "IndentedOperation": "                    'factPedidos'[ud]: ScaLogOp DependOnCols(0)('factPedidos'[ud]) Integer DominantValue=NONE",
+      "Level": 5,
+      "RowNumber": 12,
+      "NextSiblingRowNumber": 12,
+      "HighlightRow": false
+    },
+    {
+      "Operation": "Constant: ScaLogOp DependOnCols()() Integer DominantValue=0",
+      "IndentedOperation": "                    Constant: ScaLogOp DependOnCols()() Integer DominantValue=0",
+      "Level": 5,
+      "RowNumber": 13,
+      "NextSiblingRowNumber": 13,
+      "HighlightRow": false
+    },
+    {
+      "Operation": "AddColumns: RelLogOp VarName=_tabla RefCount=2 DependOnCols()() 0-1 RequiredCols(0, 1)('dimCalendario'[añoMes], ''[@Ud Acum])",
+      "IndentedOperation": "        AddColumns: RelLogOp VarName=_tabla RefCount=2 DependOnCols()() 0-1 RequiredCols(0, 1)('dimCalendario'[añoMes], ''[@Ud Acum])",
+      "Level": 2,
+      "RowNumber": 14,
+      "NextSiblingRowNumber": 30,
+      "HighlightRow": false
+    },
+    {
+      "Operation": "GroupBy_Vertipaq: RelLogOp DependOnCols()() 0-0 RequiredCols(0)('dimCalendario'[añoMes])",
+      "IndentedOperation": "            GroupBy_Vertipaq: RelLogOp DependOnCols()() 0-0 RequiredCols(0)('dimCalendario'[añoMes])",
+      "Level": 3,
+      "RowNumber": 15,
+      "NextSiblingRowNumber": 17,
+      "HighlightRow": false
+    },
+    {
+      "Operation": "Scan_Vertipaq: RelLogOp DependOnCols()() 0-13 RequiredCols(12)('dimCalendario'[añoMes])",
+      "IndentedOperation": "                Scan_Vertipaq: RelLogOp DependOnCols()() 0-13 RequiredCols(12)('dimCalendario'[añoMes])",
+      "Level": 4,
+      "RowNumber": 16,
+      "NextSiblingRowNumber": 16,
+      "HighlightRow": false
+    },
+    {
+      "Operation": "VarScope: ScaLogOp DependOnCols(0)('dimCalendario'[añoMes]) Integer DominantValue=BLANK",
+      "IndentedOperation": "            VarScope: ScaLogOp DependOnCols(0)('dimCalendario'[añoMes]) Integer DominantValue=BLANK",
+      "Level": 3,
+      "RowNumber": 17,
+      "NextSiblingRowNumber": 30,
+      "HighlightRow": false
+    },
+    {
+      "Operation": "Max_Vertipaq: ScaLogOp VarName=_diaMax DependOnCols(0)('dimCalendario'[añoMes]) DateTime DominantValue=BLANK",
+      "IndentedOperation": "                Max_Vertipaq: ScaLogOp VarName=_diaMax DependOnCols(0)('dimCalendario'[añoMes]) DateTime DominantValue=BLANK",
+      "Level": 4,
+      "RowNumber": 18,
+      "NextSiblingRowNumber": 21,
+      "HighlightRow": false
+    },
+    {
+      "Operation": "Scan_Vertipaq: RelLogOp DependOnCols(0)('dimCalendario'[añoMes]) 1-14 RequiredCols(0, 2)('dimCalendario'[añoMes], 'dimCalendario'[fecha])",
+      "IndentedOperation": "                    Scan_Vertipaq: RelLogOp DependOnCols(0)('dimCalendario'[añoMes]) 1-14 RequiredCols(0, 2)('dimCalendario'[añoMes], 'dimCalendario'[fecha])",
+      "Level": 5,
+      "RowNumber": 19,
+      "NextSiblingRowNumber": 19,
+      "HighlightRow": false
+    },
+    {
+      "Operation": "'dimCalendario'[fecha]: ScaLogOp DependOnCols(2)('dimCalendario'[fecha]) DateTime DominantValue=NONE",
+      "IndentedOperation": "                    'dimCalendario'[fecha]: ScaLogOp DependOnCols(2)('dimCalendario'[fecha]) DateTime DominantValue=NONE",
+      "Level": 5,
+      "RowNumber": 20,
+      "NextSiblingRowNumber": 20,
+      "HighlightRow": false
+    },
+    {
+      "Operation": "Calculate: ScaLogOp DependOnCols(0)('dimCalendario'[añoMes]) Integer DominantValue=BLANK",
+      "IndentedOperation": "                Calculate: ScaLogOp DependOnCols(0)('dimCalendario'[añoMes]) Integer DominantValue=BLANK",
+      "Level": 4,
+      "RowNumber": 21,
+      "NextSiblingRowNumber": 30,
+      "HighlightRow": false
+    },
+    {
+      "Operation": "Sum_Vertipaq: ScaLogOp DependOnCols(0)('dimCalendario'[añoMes]) Integer DominantValue=BLANK",
+      "IndentedOperation": "                    Sum_Vertipaq: ScaLogOp DependOnCols(0)('dimCalendario'[añoMes]) Integer DominantValue=BLANK",
+      "Level": 5,
+      "RowNumber": 22,
+      "NextSiblingRowNumber": 25,
+      "HighlightRow": false
+    },
+    {
+      "Operation": "Scan_Vertipaq: RelLogOp DependOnCols(0)('dimCalendario'[añoMes]) 2-75 RequiredCols(0, 41)('dimCalendario'[añoMes], 'factPedidos'[ud])",
+      "IndentedOperation": "                        Scan_Vertipaq: RelLogOp DependOnCols(0)('dimCalendario'[añoMes]) 2-75 RequiredCols(0, 41)('dimCalendario'[añoMes], 'factPedidos'[ud])",
+      "Level": 6,
+      "RowNumber": 23,
+      "NextSiblingRowNumber": 23,
+      "HighlightRow": false
+    },
+    {
+      "Operation": "'factPedidos'[ud]: ScaLogOp DependOnCols(41)('factPedidos'[ud]) Integer DominantValue=NONE",
+      "IndentedOperation": "                        'factPedidos'[ud]: ScaLogOp DependOnCols(41)('factPedidos'[ud]) Integer DominantValue=NONE",
+      "Level": 6,
+      "RowNumber": 24,
+      "NextSiblingRowNumber": 24,
+      "HighlightRow": false
+    },
+    {
+      "Operation": "Filter: RelLogOp DependOnCols(0)('dimCalendario'[añoMes]) 1-1 RequiredCols(0, 1)('dimCalendario'[añoMes], 'dimCalendario'[fecha])",
+      "IndentedOperation": "                    Filter: RelLogOp DependOnCols(0)('dimCalendario'[añoMes]) 1-1 RequiredCols(0, 1)('dimCalendario'[añoMes], 'dimCalendario'[fecha])",
+      "Level": 5,
+      "RowNumber": 25,
+      "NextSiblingRowNumber": 30,
+      "HighlightRow": false
+    },
+    {
+      "Operation": "Scan_Vertipaq: RelLogOp DependOnCols()() 1-1 RequiredCols(1)('dimCalendario'[fecha])",
+      "IndentedOperation": "                        Scan_Vertipaq: RelLogOp DependOnCols()() 1-1 RequiredCols(1)('dimCalendario'[fecha])",
+      "Level": 6,
+      "RowNumber": 26,
+      "NextSiblingRowNumber": 26,
+      "HighlightRow": false
+    },
+    {
+      "Operation": "LessThanOrEqualTo: ScaLogOp DependOnCols(0, 1)('dimCalendario'[añoMes], 'dimCalendario'[fecha]) Boolean DominantValue=NONE",
+      "IndentedOperation": "                        LessThanOrEqualTo: ScaLogOp DependOnCols(0, 1)('dimCalendario'[añoMes], 'dimCalendario'[fecha]) Boolean DominantValue=NONE",
+      "Level": 6,
+      "RowNumber": 27,
+      "NextSiblingRowNumber": 30,
+      "HighlightRow": false
+    },
+    {
+      "Operation": "'dimCalendario'[fecha]: ScaLogOp DependOnCols(1)('dimCalendario'[fecha]) DateTime DominantValue=NONE",
+      "IndentedOperation": "                            'dimCalendario'[fecha]: ScaLogOp DependOnCols(1)('dimCalendario'[fecha]) DateTime DominantValue=NONE",
+      "Level": 7,
+      "RowNumber": 28,
+      "NextSiblingRowNumber": 28,
+      "HighlightRow": false
+    },
+    {
+      "Operation": "ScalarVarProxy: ScaLogOp DependOnCols(0)('dimCalendario'[añoMes]) DateTime DominantValue=BLANK RefVarName=_diaMax",
+      "IndentedOperation": "                            ScalarVarProxy: ScaLogOp DependOnCols(0)('dimCalendario'[añoMes]) DateTime DominantValue=BLANK RefVarName=_diaMax",
+      "Level": 7,
+      "RowNumber": 29,
+      "NextSiblingRowNumber": 29,
+      "HighlightRow": false
+    },
+    {
+      "Operation": "Filter: RelLogOp VarName=_conDat DependOnCols()() 0-1 RequiredCols(0, 1)('dimCalendario'[añoMes], ''[@Ud Acum])",
+      "IndentedOperation": "        Filter: RelLogOp VarName=_conDat DependOnCols()() 0-1 RequiredCols(0, 1)('dimCalendario'[añoMes], ''[@Ud Acum])",
+      "Level": 2,
+      "RowNumber": 30,
+      "NextSiblingRowNumber": 35,
+      "HighlightRow": false
+    },
+    {
+      "Operation": "TableVarProxy: RelLogOp DependOnCols()() 0-1 RequiredCols(0, 1)('dimCalendario'[añoMes], ''[@Ud Acum]) RefVarName=_tabla",
+      "IndentedOperation": "            TableVarProxy: RelLogOp DependOnCols()() 0-1 RequiredCols(0, 1)('dimCalendario'[añoMes], ''[@Ud Acum]) RefVarName=_tabla",
+      "Level": 3,
+      "RowNumber": 31,
+      "NextSiblingRowNumber": 31,
+      "HighlightRow": false
+    },
+    {
+      "Operation": "GreaterThan: ScaLogOp DependOnCols(1)(''[@Ud Acum]) Boolean DominantValue=NONE",
+      "IndentedOperation": "            GreaterThan: ScaLogOp DependOnCols(1)(''[@Ud Acum]) Boolean DominantValue=NONE",
+      "Level": 3,
+      "RowNumber": 32,
+      "NextSiblingRowNumber": 35,
+      "HighlightRow": false
+    },
+    {
+      "Operation": "''[@Ud Acum]: ScaLogOp DependOnCols(1)(''[@Ud Acum]) Integer DominantValue=NONE",
+      "IndentedOperation": "                ''[@Ud Acum]: ScaLogOp DependOnCols(1)(''[@Ud Acum]) Integer DominantValue=NONE",
+      "Level": 4,
+      "RowNumber": 33,
+      "NextSiblingRowNumber": 33,
+      "HighlightRow": false
+    },
+    {
+      "Operation": "Constant: ScaLogOp DependOnCols()() Integer DominantValue=0",
+      "IndentedOperation": "                Constant: ScaLogOp DependOnCols()() Integer DominantValue=0",
+      "Level": 4,
+      "RowNumber": 34,
+      "NextSiblingRowNumber": 34,
+      "HighlightRow": false
+    },
+    {
+      "Operation": "CountRows: ScaLogOp VarName=_nMeses DependOnCols()() Integer DominantValue=BLANK",
+      "IndentedOperation": "        CountRows: ScaLogOp VarName=_nMeses DependOnCols()() Integer DominantValue=BLANK",
+      "Level": 2,
+      "RowNumber": 35,
+      "NextSiblingRowNumber": 37,
+      "HighlightRow": false
+    },
+    {
+      "Operation": "TableVarProxy: RelLogOp DependOnCols()() 0-1 RequiredCols(0, 1)('dimCalendario'[añoMes], ''[@Ud Acum]) RefVarName=_conDat",
+      "IndentedOperation": "            TableVarProxy: RelLogOp DependOnCols()() 0-1 RequiredCols(0, 1)('dimCalendario'[añoMes], ''[@Ud Acum]) RefVarName=_conDat",
+      "Level": 3,
+      "RowNumber": 36,
+      "NextSiblingRowNumber": 36,
+      "HighlightRow": false
+    },
+    {
+      "Operation": "SumX: ScaLogOp VarName=_totAcum DependOnCols()() Integer DominantValue=BLANK",
+      "IndentedOperation": "        SumX: ScaLogOp VarName=_totAcum DependOnCols()() Integer DominantValue=BLANK",
+      "Level": 2,
+      "RowNumber": 37,
+      "NextSiblingRowNumber": 40,
+      "HighlightRow": false
+    },
+    {
+      "Operation": "TableVarProxy: RelLogOp DependOnCols()() 0-1 RequiredCols(0, 1)('dimCalendario'[añoMes], ''[@Ud Acum]) RefVarName=_tabla",
+      "IndentedOperation": "            TableVarProxy: RelLogOp DependOnCols()() 0-1 RequiredCols(0, 1)('dimCalendario'[añoMes], ''[@Ud Acum]) RefVarName=_tabla",
+      "Level": 3,
+      "RowNumber": 38,
+      "NextSiblingRowNumber": 38,
+      "HighlightRow": false
+    },
+    {
+      "Operation": "''[@Ud Acum]: ScaLogOp DependOnCols(1)(''[@Ud Acum]) Integer DominantValue=NONE",
+      "IndentedOperation": "            ''[@Ud Acum]: ScaLogOp DependOnCols(1)(''[@Ud Acum]) Integer DominantValue=NONE",
+      "Level": 3,
+      "RowNumber": 39,
+      "NextSiblingRowNumber": 39,
+      "HighlightRow": false
+    },
+    {
+      "Operation": "Divide: ScaLogOp VarName=_promAcum DependOnCols()() Double DominantValue=BLANK",
+      "IndentedOperation": "        Divide: ScaLogOp VarName=_promAcum DependOnCols()() Double DominantValue=BLANK",
+      "Level": 2,
+      "RowNumber": 40,
+      "NextSiblingRowNumber": 43,
+      "HighlightRow": false
+    },
+    {
+      "Operation": "ScalarVarProxy: ScaLogOp DependOnCols()() Integer DominantValue=BLANK RefVarName=_totAcum",
+      "IndentedOperation": "            ScalarVarProxy: ScaLogOp DependOnCols()() Integer DominantValue=BLANK RefVarName=_totAcum",
+      "Level": 3,
+      "RowNumber": 41,
+      "NextSiblingRowNumber": 41,
+      "HighlightRow": false
+    },
+    {
+      "Operation": "ScalarVarProxy: ScaLogOp DependOnCols()() Integer DominantValue=BLANK RefVarName=_nMeses",
+      "IndentedOperation": "            ScalarVarProxy: ScaLogOp DependOnCols()() Integer DominantValue=BLANK RefVarName=_nMeses",
+      "Level": 3,
+      "RowNumber": 42,
+      "NextSiblingRowNumber": 42,
+      "HighlightRow": false
+    },
+    {
+      "Operation": "Divide: ScaLogOp VarName=_result DependOnCols()() Double DominantValue=BLANK",
+      "IndentedOperation": "        Divide: ScaLogOp VarName=_result DependOnCols()() Double DominantValue=BLANK",
+      "Level": 2,
+      "RowNumber": 43,
+      "NextSiblingRowNumber": 46,
+      "HighlightRow": false
+    },
+    {
+      "Operation": "ScalarVarProxy: ScaLogOp DependOnCols()() Integer DominantValue=BLANK RefVarName=_salidas",
+      "IndentedOperation": "            ScalarVarProxy: ScaLogOp DependOnCols()() Integer DominantValue=BLANK RefVarName=_salidas",
+      "Level": 3,
+      "RowNumber": 44,
+      "NextSiblingRowNumber": 44,
+      "HighlightRow": false
+    },
+    {
+      "Operation": "ScalarVarProxy: ScaLogOp DependOnCols()() Double DominantValue=BLANK RefVarName=_promAcum",
+      "IndentedOperation": "            ScalarVarProxy: ScaLogOp DependOnCols()() Double DominantValue=BLANK RefVarName=_promAcum",
+      "Level": 3,
+      "RowNumber": 45,
+      "NextSiblingRowNumber": 45,
+      "HighlightRow": false
+    },
+    {
+      "Operation": "ScalarVarProxy: ScaLogOp DependOnCols()() Double DominantValue=BLANK RefVarName=_result",
+      "IndentedOperation": "        ScalarVarProxy: ScaLogOp DependOnCols()() Double DominantValue=BLANK RefVarName=_result",
+      "Level": 2,
+      "RowNumber": 46,
+      "NextSiblingRowNumber": 47,
+      "HighlightRow": false
+    }
+  ],
+  "ActivityID": "B4E8B647-6622-4FB5-82F9-88986B8DE959",
+  "CommandText": "EVALUATE\n{\n--Las salidas son Ud que figuran en negativo en la tabla origen------\nVAR _salidas =      CALCULATE(\n                        SUM( factPedidos[ud] )* -1,\n                        factPedidos[ud] < 0\n                    )\n\n--Creación de tabla virtual con meses y ud acumuladas----------------\nVAR _tabla =    ADDCOLUMNS(\n                    SUMMARIZE(\n                        dimCalendario,\n                        dimCalendario[AñoMes]\n                    ),\n                    \"@Ud Acum\",\n                    CALCULATE(\n                        VAR _diaMax = MAX(dimCalendario[fecha])\n                        RETURN\n                        CALCULATE(\n                            SUM(factPedidos[ud]),\n                            dimCalendario[fecha] <= _diaMax\n                        )\n                    )\n                )\n\n--Determinación del Nº de meses que tienen datos---------------------\nVAR _conDat =   FILTER(\n                    _tabla,\n                    [@Ud Acum] > 0\n                )\nVAR _nMeses =   COUNTROWS(_conDat)\n\n--Creación del promedio sobre las cifras acumuladas------------------\nVAR _totAcum =  SUMX(_tabla, [@Ud Acum])\nVAR _promAcum = DIVIDE(_totAcum, _nMeses)\n\n--Cálculo final------------------------------------------------------\nVAR _result =   DIVIDE(_salidas, _promAcum)\n\nRETURN          _result\n}",
+  "Parameters": null,
+  "StartDatetime": "2024-03-24T12:18:32.083333+01:00"
+}
