@@ -1,0 +1,11 @@
+id_cliente,nombre,email,ciudad,fecha_alta
+C01,Lucía Romero,lucia.romero@example.com,Madrid,2023-03-14
+C02,Marcos Gil,MARCOS.GIL@EXAMPLE.COM, Sevilla ,2023-06-02
+C03,Elena Vidal,elena.vidal@example.com,valencia,2023-09-21
+C04,Andrés Pino,andres.pino@example.com,Bilbao,2024-01-08
+C05,Sara Molina,sara.molina@example.com,MADRID,2024-02-17
+C06,Jorge Lara,jorge.lara@example.com,Zaragoza,2024-04-30
+C07,Nuria Campos,nuria.campos@example.com,Málaga,2024-07-12
+C08,Pablo Ortega,pablo.ortega@example.com,Barcelona,2024-09-05
+C09,Irene Soto,irene.soto@example.com,Granada,2024-11-19
+C10,Daniel Ruiz,daniel.ruiz@example.com, valencia,2025-01-02

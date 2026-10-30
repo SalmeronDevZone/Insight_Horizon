@@ -1,0 +1,12 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Salidas del pipeline: se regeneran con "python -m etl.pipeline"
+pipeline/salida/
+
+# Jupyter y sistema
+.ipynb_checkpoints/
+.DS_Store
+Thumbs.db

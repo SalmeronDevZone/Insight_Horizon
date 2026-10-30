@@ -1,90 +1,51 @@
 # 🌌 Insight_Horizon
 
-### 🚀 Explorando datos, descubriendo historias
+**De datos en bruto a datos fiables.** Un pipeline ETL completo con arquitectura *medallion*, pruebas automáticas e integración continua, más una colección de notebooks de análisis.
 
-Bienvenido a **Insight_Horizon**, un espacio donde combino mi experiencia como **Analista de Datos** con la pasión por **Power BI**, **DAX** y la creación de **insights accionables**.  
-Aquí encontrarás reportes, ejemplos de medidas DAX y otros recursos diseñados para inspirar, aprender y mejorar tus propios proyectos de análisis de datos.
+[![pipeline](https://github.com/SalmeronDevZone/Insight_Horizon/actions/workflows/pipeline.yml/badge.svg)](https://github.com/SalmeronDevZone/Insight_Horizon/actions/workflows/pipeline.yml)
+![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)
+![SQLite](https://img.shields.io/badge/SQLite-modelo%20en%20estrella-003B57?logo=sqlite&logoColor=white)
+![Dependencias](https://img.shields.io/badge/dependencias-0-success)
 
-<p align="center">
-  <img src="https://cdn-icons-png.flaticon.com/512/732/732220.png" alt="Power BI icon" width="120">
-  <img src="https://cdn-icons-png.flaticon.com/512/2541/2541988.png" alt="Analytics icon" width="120">
-</p>
+## Qué hay aquí
 
----
+| Carpeta | Contenido |
+| --- | --- |
+| [`pipeline/`](pipeline/) | **Pipeline ETL de ventas**: CSV sucios → bronze → silver → modelo en estrella en SQLite. Idempotente, incremental, con cuarentena de filas erróneas y 13 pruebas |
+| [`pipeline/retos/`](pipeline/retos/) | **8 retos** para llevarlo a producción: contratos de datos, SCD tipo 2, particionado, borrados en origen, orquestación... |
+| [`notebooks/`](notebooks/) | Análisis con pandas, scikit-learn y SciPy: correlación, optimización, k-NN y Montecarlo |
 
-## 📊 ¿Qué encontrarás aquí?
+## El pipeline en 30 segundos
 
-🧠 **Reportes de Power BI**  
-Colección de dashboards y visualizaciones que muestran el poder de transformar datos en conocimiento.
+```bash
+git clone https://github.com/SalmeronDevZone/Insight_Horizon.git
+cd Insight_Horizon/pipeline
+python -m etl.pipeline      # carga los datos de ejemplo
+python -m unittest -v       # 13 pruebas
+```
 
-⚙️ **Códigos DAX reutilizables**  
-Medidas, columnas calculadas y modelos base que puedes adaptar a tus propios proyectos.
+```mermaid
+flowchart LR
+    RAW["CSV de origen"] --> BR[("bronze<br/>tal cual llegó")]
+    BR --> QC{"calidad"}
+    QC -->|válidas| SI[("silver<br/>limpio y tipado")]
+    QC -->|errores| CU[("cuarentena")]
+    SI --> GO[("gold<br/>modelo en estrella")]
+```
 
-💡 **Buenas prácticas y estructuras de modelos**  
-Ejemplos de modelos estrella, uso de tablas de fechas, relaciones eficientes y optimización de rendimiento en Power BI.
+Los datos de ejemplo traen los errores de siempre: fechas en dos formatos, decimales con coma, duplicados, clientes que no existen, cantidades negativas y una venta que se corrige un mes después. El pipeline los resuelve todos. El detalle está en el [README del pipeline](pipeline/README.md).
 
-📸 **Visualizaciones y ejemplos gráficos**  
-Incluye capturas y ejemplos visuales para inspirar tu propio diseño de reportes y storytelling de datos.
+## Lo que demuestra este proyecto
 
-<p align="center">
-  <img src="https://cdn-icons-png.flaticon.com/512/2518/2518382.png" alt="Dashboard icon" width="120">
-  <img src="https://cdn-icons-png.flaticon.com/512/3141/3141647.png" alt="Chart icon" width="120">
-  <img src="https://cdn-icons-png.flaticon.com/512/9068/9068643.png" alt="Data storytelling icon" width="120">
-</p>
+- **Modelado dimensional:** tabla de hechos, dimensiones y una dimensión de fechas generada.
+- **Calidad de datos:** reglas declarativas, cuarentena con motivos e informe de calidad en JSON.
+- **Cargas robustas:** idempotencia por checksum, incrementales, *upserts* para correcciones tardías y una transacción por fichero.
+- **Ingeniería de software aplicada a datos:** código modular, pruebas automáticas y CI con GitHub Actions, que publica el informe de calidad como artefacto.
 
----
+## Tecnologías
 
-## 🧩 Propósito del repositorio
-
-El objetivo de **Insight_Horizon** es servir como una **colección abierta de recursos** para analistas, desarrolladores de BI y entusiastas del dato.  
-Busco compartir ideas, fórmulas y ejemplos que te ayuden a **mejorar tus proyectos en Power BI y DAX**.
-
-> 💬 Si encuentras algo que te resulta útil, no dudes en usarlo.  
-> Si algo no te queda del todo claro, **escríbeme sin problema — será un placer ayudarte.**
-
----
-
-## 🧠 Acerca de mí
-
-👋 Soy **Jesús Salmerón**, analista de datos con experiencia en Power BI, modelado semántico y storytelling con datos.  
-Me apasiona convertir información en conocimiento útil, ayudar a equipos a tomar mejores decisiones y compartir lo que aprendo con la comunidad.
-
-📎 **Conecta conmigo en LinkedIn:**  
-👉 [linkedin.com/in/jesussalmeronconsulting](https://www.linkedin.com/in/jesussalmeronconsulting/)
-
-<p align="center">
-  <img src="https://cdn-icons-png.flaticon.com/512/1077/1077012.png" alt="Professional avatar icon" width="120">
-  <img src="https://cdn-icons-png.flaticon.com/512/2331/2331970.png" alt="Power BI badge" width="120">
-  <img src="https://cdn-icons-png.flaticon.com/512/1163/1163624.png" alt="Data analyst icon" width="120">
-</p>
+Python 3 (sólo la librería estándar: `csv`, `sqlite3`, `decimal`, `hashlib`, `logging`, `unittest`), SQL (SQLite), GitHub Actions. Los notebooks usan pandas, NumPy, scikit-learn, SciPy, GEKKO, Matplotlib y seaborn.
 
 ---
 
-## 🤝 Contribuye o colabora
-
-Si quieres aportar ideas, ejemplos o sugerencias, ¡adelante!  
-Puedes abrir un **Issue** o enviar un **Pull Request** con tus mejoras o consultas.  
-La colaboración es clave para seguir creciendo como comunidad.
-
-<p align="center">
-  <img src="https://cdn-icons-png.flaticon.com/512/2936/2936631.png" alt="Collaboration icon" width="120">
-  <img src="https://cdn-icons-png.flaticon.com/512/2997/2997308.png" alt="Teamwork icon" width="120">
-</p>
-
----
-
-## 🌟 Inspiración final
-
-> “Los datos cuentan una historia.  
-> Nuestra labor como analistas es asegurarnos de que sea una historia que valga la pena escuchar.”
-
----
-
-📬 **Contacto rápido:**  
-Si algo de este repositorio te sirve o te gustaría entender mejor,  
-no dudes en escribirme por **LinkedIn**.  
-Será un placer ayudarte. 🙌
-
----
-
-© 2025 Jesús Salmerón · *Insight_Horizon*
+**Jesús Salmerón** · Data Engineer · [GitHub](https://github.com/SalmeronDevZone) · [LinkedIn](https://www.linkedin.com/in/jesussalmeronarmario/)

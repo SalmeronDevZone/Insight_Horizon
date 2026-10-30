@@ -1,0 +1,30 @@
+name: pipeline
+
+on:
+  push:
+    branches: [main]
+    paths: ["pipeline/**", ".github/workflows/pipeline.yml"]
+  pull_request:
+    paths: ["pipeline/**"]
+  workflow_dispatch:
+
+jobs:
+  pruebas:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: pipeline
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Pruebas
+        run: python -m unittest -v
+      - name: Ejecutar el pipeline con los datos de ejemplo
+        run: python -m etl.pipeline
+      - name: Publicar el informe de calidad
+        uses: actions/upload-artifact@v4
+        with:
+          name: informe-calidad
+          path: pipeline/salida/informe_calidad.json

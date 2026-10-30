@@ -1,0 +1,9 @@
+codigo_producto,nombre,categoria,precio_catalogo
+P001,Teclado mecánico,Periféricos,79.90
+P002,Ratón inalámbrico,Periféricos,24.50
+P003,Monitor 27 pulgadas,Monitores,229.00
+P004,Portátil 14 pulgadas,Portátiles,899.00
+P005,Auriculares Bluetooth,Audio,59.99
+P006,Webcam HD,Periféricos,39.90
+P007,Disco SSD 1 TB,Almacenamiento,94.00
+P008,Hub USB-C,Accesorios,29.90
